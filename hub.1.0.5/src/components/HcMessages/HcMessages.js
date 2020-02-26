@@ -234,61 +234,6 @@ export default class HcMessages extends React.Component {
 			}
 		});
 	}
-	returnFileAsDataURL(fileAsReceived) {
-		// return a promise
-		return new Promise((resolve, reject) => {
-			console.log('got to 3');
-			const fileReaderInstance = new FileReader();
-			fileReaderInstance.onload = () => {
-				resolve(fileReaderInstance.result);
-			};
-			fileReaderInstance.readAsDataURL(fileAsReceived);
-		});
-	}
-	returnFileAsText(fileAsReceived) {
-		// return a promise
-		return new Promise((resolve, reject) => {
-			console.log('got to 2');
-			const fileReaderInstance = new FileReader();
-			fileReaderInstance.onload = () => {
-				resolve(fileReaderInstance.result);
-			};
-			fileReaderInstance.readAsText(fileAsReceived);
-		});
-	}
-	returnFileAsBinary(fileAsReceived) {
-		// return a promise
-		return new Promise((resolve, reject) => {
-			console.log('got to 2b');
-			const fileReaderInstance = new FileReader();
-			fileReaderInstance.onload = () => {
-				resolve(fileReaderInstance.result);
-			};
-			fileReaderInstance.readAsText(fileAsReceived);
-		});
-	}
-	returnFileObject(fileAsReceived) {
-		// return a promise
-		return new Promise((resolve, reject) => {
-			console.log('got to 1b');
-			// get a promise to 
-			this.returnFileAsBinary(fileAsReceived)
-				// if the promise is resolved with a result
-				.then((filesAsBinary) => {
-					const formattedFile = {
-						fileName: fileAsReceived.name,
-						fileType: fileAsReceived.type,
-						fileBinaryContent: filesAsBinary,
-					};
-					resolve(formattedFile);
-				})
-				// if the promise is rejected with an error
-				.catch((error) => {
-					// reject this promise with the error
-					reject(error);
-				});
-		});
-	}
 	handleDroppedFiles(acceptedFiles, rejectedFiles) {
 		// if all files submitted for upload are of the right type (none were rejected by Dropzone)
 		if (!rejectedFiles[0]) {
@@ -312,21 +257,15 @@ export default class HcMessages extends React.Component {
 							const uploadsSucceeded = [];
 							const uploadsFailed = [];
 							let newMessageImageSomeOrAllUploadsFailedWarningValue = false;
-							fileUploadResults.forEach((resultValue) => {
-								console.log('resultValue');
-								console.log(resultValue);
-								if (resultValue.result.status === 204) {
-									const finalStoragePath = `https://mos-api-misc-storage.s3.amazonaws.com/hub-message-assets/formatted/${messageID}`;
-									const name = resultValue.location.substring(resultValue.location.lastIndexOf('/') + 1);
-									uploadsSucceeded.push({
-										name,
-										urlTemp: resultValue.location,
-										urlFinal: `${finalStoragePath}/${name}`,
-										key: uuidv4(),
-									});
-								} else {
-									uploadsFailed.push(resultValue);
-								}
+							fileUploadResults.forEach((fileUploadResult) => {
+								uploadsSucceeded.push({
+									/**
+									 * @todo sub %20 for spaces from file name =====================================================
+									 */
+									name: fileUploadResult.substring(fileUploadResult.lastIndexOf('/') + 1),
+									url: `https://mos-api-misc-storage.s3.amazonaws.com${fileUploadResult}`,
+									key: uuidv4(),
+								});
 							});
 							if (uploadsFailed[0]) {
 								newMessageImageSomeOrAllUploadsFailedWarningValue = true;
@@ -337,8 +276,8 @@ export default class HcMessages extends React.Component {
 								const previousFileArray = prevState.newMessageImages;
 								const currentFileArray
 											= [...uploadsSucceeded, ...previousFileArray];
-								console.log('the files after dropping and before saving');
-								console.log(currentFileArray);
+								// console.log('the files after dropping and before saving');
+								// console.log(currentFileArray);
 								return {
 									newMessageImagesAreUploading: false,
 									newMessageImages: currentFileArray,
@@ -350,8 +289,8 @@ export default class HcMessages extends React.Component {
 					// if the promise to upload the files was rejected with an error
 					// note: could be because a folder couldn't be created, or some other reason
 						.catch((error) => {
-							console.log('error');
-							console.log(error);
+							// console.log('error');
+							// console.log(error);
 							// set state to indicate that images are no longer processing and image upload error
 							this.setState({
 								newMessageImagesAreUploading: false,
@@ -380,15 +319,21 @@ export default class HcMessages extends React.Component {
 			}));
 		}
 	}
-	handleFileDeletion(imageID, e) {
+	handleFileDeletion(imageContent, e) {
 		// prevent navigating to image (because the control is inside a link)
 		e.preventDefault();
 		// set state to reflect all image uploads to this point minus the one whose button was clicked
+		HcMessagesData.DeleteMessagesFile(this.state.newMessageID, imageContent.name);
+		/* .then((allMessageTags) => {
+				this.setState(() => ({
+					tagsArray: allMessageTags,
+				}));
+			}); */
 		this.setState((prevState) => {
 			const previousFileArray = prevState.newMessageImages;
 			const currentFileArray = [];
 			previousFileArray.forEach((file) => {
-				if (file.key !== imageID) {
+				if (file.key !== imageContent.key) {
 					currentFileArray.push(file);
 				}
 			});
@@ -851,11 +796,13 @@ export default class HcMessages extends React.Component {
 			};
 			newMessageProperties.newMessageImagesToCheck.forEach((checkingImage) => {
 				const checkingImageCopy = checkingImage;
-				if (!checkingImageCopy.imageKey) {
-					checkingImageCopy.imageKey = shortid.generate();
+				if (!checkingImageCopy.key) {
+					checkingImageCopy.key = uuidv4();
 				}
 				newMessageProperties.newMessageImages.push(checkingImageCopy);
 			});
+			console.log('handleMessageUpdate   newMessageProperties');
+			console.log(newMessageProperties);
 			// send message to Neso
 			HcMessagesData.SendNesoMessagesMessageUpdate(newMessageProperties)
 				.then((response) => {

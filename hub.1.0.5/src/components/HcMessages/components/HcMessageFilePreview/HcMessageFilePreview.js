@@ -13,10 +13,11 @@ export default class HcMessagesFilePreview extends React.Component {
 		super(props);
 	}
 	render() {
-		// console.log(this.props.imageContent);
+		// console.log('file preview props');
+		// console.log(this.props);
 		// if this image was uploaded successfully (error is false)
 		if (!this.props.imageContent.error) {
-			const backgroundImageUrl = MOSUtilities.ReplaceAll(' ', '%20', this.props.imageContent.urlTemp);
+			const backgroundImageUrl = MOSUtilities.ReplaceAll(' ', '%20', this.props.imageContent.url);
 			const imagePreviewStyles = {
 				backgroundImage: `url(${backgroundImageUrl})`,
 			};
@@ -25,7 +26,7 @@ export default class HcMessagesFilePreview extends React.Component {
 				<a 
 					id={`hc-messages-images-image-container_${this.props.imageId}`}
 					className="hc-messages-images-image-container file-upload-preview image-upload-success mos-react-component-root"
-					href={this.props.imageContent.urlTemp} 
+					href={this.props.imageContent.url} 
 					target="_blank"
 				>
 					{/* image preview */}
@@ -46,7 +47,7 @@ export default class HcMessagesFilePreview extends React.Component {
 					<button
 						id={`hc-messages-images-image-file-control_${this.props.imageId}`} 
 						className="hc-messages-images-image-file-control file-upload-preview__file-control"
-						onClick={(e) => this.props.handleFileDeletion(this.props.imageId, e)}
+						onClick={(e) => this.props.handleFileDeletion(this.props.imageContent, e)}
 					>
 						<span className="button__icon"></span>
 						<span className="button__text">Delete image</span>

@@ -267,7 +267,23 @@ export default class HcMessagesData {
 					});
 					Promise.all(uploadPromises)
 						.then((uploadResultsArray) => {
-							resolve(uploadResultsArray);
+							// get a promise to 
+							APIClient.SendAPIData(
+								`${APIEndPoints.dev.hubMessages.base}${APIEndPoints.dev.hubMessages.images}`,
+								{
+									messageID,
+								},
+							)
+								// if the promise is resolved with a result
+								.then((formattingResult) => {
+									// then resolve this promise with the result
+									resolve(formattingResult);
+								})
+								// if the promise is rejected with an error
+								.catch((formattingError) => {
+									// reject this promise with the error
+									reject(formattingError);
+								});
 						})
 						.catch((uploadError) => {
 							reject(uploadError);
@@ -277,6 +293,25 @@ export default class HcMessagesData {
 				.catch((credentialsError) => {
 					// reject this promise with the error
 					reject(credentialsError);
+				});
+		});
+	}
+	static DeleteMessagesFile(messageID, fileName) {
+		// return a promise to upload the fies
+		return new Promise((resolve, reject) => {
+			// get a promise to send the email
+			APIClient.SendAPIDeleteRequest(
+				`${APIEndPoints.dev.hubMessages.base}${APIEndPoints.dev.hubMessages.images}`,
+				{
+					messageID,
+					fileName,
+				},
+			)
+				.then((response) => {
+					resolve(response);
+				})
+				.catch((error) => {
+					reject(error);
 				});
 		});
 	}
