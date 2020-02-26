@@ -1,0 +1,687 @@
+
+=carryover-button
+	+round-corners
+	+font-size-6
+	+font-weight-semibold
+	display: inline-block
+	float: none !important
+	box-sizing: border-box
+	min-width: 0
+	min-height: 4rem
+	padding: .8rem 2rem
+	margin: 0 !important
+	// font-size: 1.5rem
+	// font-weight: normal
+	text-align: center
+	text-decoration: none
+	border: 0
+	transition: background-color .25s
+	cursor: pointer
+	
+	&:hover
+		+small-shadow-bottom-right-light-color
+
+=carryover-button-active
+	text-decoration: none
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+//			GLOBAL
+/////////////////////////////////////////////////////////////////////////////////
+
+// ------------------
+// TYPE
+// ------------------
+
+div#s4-workspace
+
+	h2, h3, .ms-h2, .ms-h3, .ms-headerFont
+		+font-family-segoe
+
+	.ms-rte-wpbox
+		font-weight: 300 !important
+
+
+// ------------------
+// PAGE HEADER
+// ------------------
+
+div#s4-workspace
+
+	div#s4-titlerow
+
+		// -- SITE ICON
+
+		div#siteIcon
+			margin-left: 2rem
+			margin-right: 4.75rem
+
+			img.ms-siteicon-img
+				width: 13rem
+				max-width: 13rem
+				margin-top: .47rem
+
+		// -- TITLE
+
+		a,
+		a:link,
+		a:visited,
+		a.ms-core-listMenu-item,
+		a.ms-core-listMenu-item:link,
+		a.ms-core-listMenu-item:visited,
+		a.ms-tv-item:link,
+		a.ms-tv-item:visited,
+		a.ms-tv-header:link,
+		a.ms-tv-header:visited
+			color: $interactive-default
+
+			&:hover
+				color: $interactive-active
+
+		li
+			display: inline-block
+			margin: 0 0 0 2rem
+
+			&:first-child
+				margin: 0
+
+		h1#pageTitle.ms-core-pageTitle
+			+font-size-1
+			// font-size: 4.5rem
+			+font-family-segoe
+			font-weight: 300
+
+			a
+				@extend h1#pageTitle.ms-core-pageTitle
+				color: $interactive-default
+
+				&:hover
+					color: $interactive-active
+
+		// -- SEARCH
+
+		div#DeltaPlaceHolderSearchArea
+			display: none
+
+
+// ------------------
+// QUICK LAUNCH
+// ------------------
+
+div#s4-workspace
+
+	div#sideNavBox
+		min-width: 19rem
+		margin-left: 0
+		padding-top: 1rem
+
+		// hide the Site Contents link - haven't been successful removing this link through browser or in master page
+		a[href$="viewlsts.aspx"]
+			display: none
+
+
+
+// ------------------
+// COLLAPSIBLE
+// ------------------
+
+.collapsible-heading-status
+	+inline-hidden
+
+.collapsible-content
+	overflow: hidden
+
+.collapsible-content-collapsed
+	display: none
+
+
+
+// ------------------
+// MSFT OVERRIDE
+// ------------------
+
+#contentBox
+	min-width: 0
+
+
+/////////////////////////////////////////////////////////////////////////////////
+//			jQUERY UI OVERRIDE
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
+// dialog
+div.ui-dialog
+	padding: 0
+	border-color: $grey-3
+	box-shadow: .3rem .3rem 7rem 1rem rgba(0,0,0,0.15)
+
+	div.ui-dialog-titlebar.ui-widget-header
+		font-weight: 500
+		border: none
+		background-color: $grey-1
+
+	div.ui-dialog-content.ui-widget-content
+		background-color: $white
+
+		a
+			color: $interactive-default
+
+			&:hover
+				color: $interactive-active
+
+	div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se
+		right: 0
+		bottom: 0
+		background: url('/sites/hubprod/Asset%20Library/icon_grip_diagonal_se.png') no-repeat center center
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+//			HUB CENTRAL COMMUNITY PAGES
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
+// ------------------
+// GLOBAL HUB CENTRAL COMMUNITY PAGES
+// ------------------
+
+// --- LAYOUT
+
+
+
+// not used everywhere
+// replace with legit responsiveness
+
+div#s4-workspace
+
+	// table.in-zone-table
+	// 	width: 100%
+
+	// 	tbody tr:first-child
+	// 		vertical-align: top
+
+	// 	tbody > tr > td
+	// 		width: 50%
+
+	div.public-community-page
+
+		div.primary-section
+			margin-bottom: 2.5rem
+
+		div.secondary-sections
+			+row
+
+			div.secondary-section
+				+column
+				width: 50%
+				padding-right: 2.5rem
+
+				div.tertiary-section
+					padding-bottom: 1rem
+
+		div.documents-web-part table table
+
+			thead
+				display: none
+
+
+		div.ms-rtestate-read.ms-rte-wpbox
+
+			div.ms-webpartzone-cell
+				margin-bottom: 0
+
+			table table
+
+				// thead
+				// 	display: none
+
+				tbody
+					// position: relative
+					// top: -1.5rem
+
+					tr td.ms-vb-icon
+						padding-left: 0
+
+
+
+
+// --- COMMUNITY, ARCHIVE DESCRIPTION
+
+div#s4-workspace
+
+	h2.community-description-header,
+	h2.archive-description-header
+		+block-hidden
+
+	div.community-description,
+	div.archive-description
+		+font-size-5
+
+		h3
+			+font-size-3
+			// font-size: 2.75rem !important
+
+// --- EDIT LINK
+
+div#s4-workspace
+
+	p.edit-link-container
+		margin-bottom: 0
+
+// --- SWF LINKS
+
+div#s4-workspace
+
+	span.link-explanation
+		display: block
+		padding-left: 1rem
+
+		ul
+			margin: 0
+
+// --- PUBLIC COMMUNITY LINKS
+
+// div#s4-workspace
+
+// 	p.public-community-link_parent
+// 		margin-top: 2rem
+
+// 		a.public-community-link
+// 			+button
+// 			margin-top: 1rem
+// 			font-size: 1.75rem
+// 			color: $text-on-interactive-default !important
+// 			background-color: $interactive-default
+
+// 			&:hover
+// 				+button-active
+// 				background-color: $interactive-active
+
+// --- IN-PAGE PERSONAS
+
+div#s4-workspace
+
+	div.in-page-persona
+		+row
+		margin: 1rem 0
+
+
+		span.avatar-container
+			+column
+			width: 7.2rem
+
+			span.avatar
+				display: block
+				position: relative
+				width: 7.2rem
+				height: 7.2rem
+				// width: 7.4rem
+				// height: 2.4rem
+				// padding: 2.2rem 0 2.6rem
+				border-radius: 50%
+				background-color: $white
+				text-align: center
+
+				span.avatar-initials
+					+font-size-3
+					display: block
+					position: absolute
+					left: 0
+					top: 2.2rem
+					width: 7.2rem
+					// font-size: 2.4rem
+					line-height: 2.4rem
+					font-weight: 300
+					margin: 0 auto
+					color: $bold-purple
+
+				// img.avatar-image
+				// 	border-radius: 50%
+
+				span.avatar-photo
+					display: block
+					position: absolute
+					left: 0
+					top: 0
+					width: 7.2rem
+					height: 7.2rem
+					border-radius: 50%
+					background-repeat: no-repeat
+					background-position: center center
+					background-size: cover
+
+
+		span.name_title
+			+column
+			padding: 1rem 0 0 2rem
+
+			a.profile
+				+carryover-button
+				text-align: left
+				color: $white !important
+				background-color: $interactive-default
+
+				&:hover
+					+carryover-button-active
+					color: $white !important
+					background-color: $interactive-active
+
+			span.name
+				+font-size-4
+				display: block
+				// font-size: 2.1rem
+				font-weight: 300
+
+			span.title
+				+font-size-7
+				display: block
+				// font-size: 1.2rem
+				padding-top: .2rem
+				color: $grey-16
+
+
+
+// --- COMMUNITY CONTACTS
+// --- TARGETED COMMUNITY LINKS
+
+div#s4-workspace
+
+	div.targeted-community-link,
+	div.targeted-links,
+	div.community-contact
+		padding: 1.5rem 3rem
+		color: $grey-16
+
+		h2
+			color: $bold-purple
+
+	div.targeted-community-link,
+	div.targeted-links
+		+round-corners
+		// background-color: $subtle-green
+		background-image: linear-gradient(to bottom, $subtle-yellow, $primary-green)
+
+		a
+			+carryover-button
+			text-align: left
+			color: $white !important
+			background-color: $interactive-default
+
+			&:hover
+				+carryover-button-active
+				color: $white !important
+				background-color: $interactive-active
+
+		ul li
+			list-style: none
+			margin-left: 0
+			margin-bottom: .5rem
+
+
+	div.community-contact
+		+round-corners
+		// background-color: $subtle-yellow
+		background-image: linear-gradient(to bottom, $primary-green, $subtle-pink)
+
+		h2 nobr span,
+		.ms-vb
+			color: $grey-16 !important
+
+		table table > tbody > tr
+			height: auto
+
+		a
+			text-align: left
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------
+// INDIVIDUAL HUB COMMUNITY PAGES
+// ------------------
+
+// --- ENVIRONMENTAL HEALTH AND SAFETY
+
+div#public-community-page_msds,
+div#public-community-page_ppeha
+
+	div.primary-section
+		+font-size-5
+		// font-size: 1.75rem
+
+
+
+// --- HUMAN RESOURCES, VOLUNTEER SERVICES
+
+
+//    <h3>Open Enrollment​</h3>
+//    <div id="open-enrollment-link-container">​​​ 
+//          <a href="/SitePages/Open%20Enrollment.aspx">Learn about benefit options and make changes</a>​
+//    </div>
+
+
+
+div#s4-workspace
+
+	div#public-community-page_volunteer-services
+
+		p#container_volunteer-services-request-link
+			position: relative
+			top: -1.5rem
+
+	div.public-community-page.human-resources
+
+		div#open-enrollment-link-container
+			+font-size-4
+			+round-corners
+			margin: 0 0 2rem 0 !important
+			padding: 1.5rem 3rem
+			background-color: $orange-1
+			
+			a
+				color: $interactive-default-darkened-2
+
+				&:hover
+					color: $interactive-active-darkened-2
+
+		div.tertiary-section table.ms-listviewtable thead[role="presentation"]
+			display: none
+
+
+	div#public-community-page_open-enrollment
+
+		div.primary-section
+			// font-size: 1.75rem
+
+			table.ms-listviewtable thead
+				display: none
+
+		div#need-to-know
+
+			h2#header_need-to-know
+				color: $bold-pink
+
+			table.ms-listviewtable thead
+				display: none
+
+		div#important-dates
+
+			h2#header_important-dates
+				color: $bold-green
+
+			table.ms-listviewtable thead
+				display: none
+
+	div#public-community-page_benefits
+
+		div.primary-section
+			// font-size: 1.75rem
+
+		div.secondary-sections
+			+row
+
+			div.secondary-section
+				+column
+
+			div.secondary-section:nth-child(1)
+				width: 70%
+				padding-right: 3%
+
+			div.secondary-section:nth-child(2)
+				width: 25%
+
+	div#public-community-page_moscars
+
+		div#hero-spot
+			+font-size-3
+			// font-size: 2.75rem
+			color: $bold-pink
+
+		div#call-to-action
+
+			p
+				display: inline-block
+
+				a
+					+button
+					+button-colored
+					display: inline-block
+					padding: 1.5rem
+					line-height: 1rem
+					
+
+		p#section-1,
+		p#section-3
+			font-weight: 700
+
+		div#tagline
+			// font-size: 1.75rem
+			padding: 1.5rem
+			background-color: $subtle-orange
+			color: $grey-14
+
+
+
+// --- MARKETING COMMUNICATIONS
+
+@media only screen and (min-width: 1140px)
+
+	div#hub-community_marcom_requests_documents div#marcom-requests,
+	div#hub-community_marcom_requests_documents div#marcom-documents
+		display: inline-block
+		width: 45%
+		vertical-align: top
+
+	div#hub-community_marcom_requests_documents div#marcom-requests
+		padding-right: 2rem
+
+div#business-card-request-instructions
+	max-width: 60rem
+
+
+
+
+
+// --- WELLNESS
+
+div#wellness-body div.community-description
+	// font-size: 1.75rem
+	padding-bottom: 1rem
+
+div#wellness-community-contacts h2,
+div#wellness-community-contacts h3
+	margin-bottom: 0.5rem
+
+@media only screen and (min-width: 1140px)
+
+	img#wellness-logo
+		float: right
+		margin: 0 0 2rem 2rem
+
+	div#wellness-body,
+	div#wellness-aside
+		display: table-cell
+		padding: 0 0 0 1rem
+		vertical-align: top
+
+	div#wellness-body
+		padding: 0 1rem 0 0
+
+	div#wellness-pics-and-gym,
+	div#wellness-harvard-pilgrim
+		display: table-cell
+		width: 45%
+		padding: 0 0 0 1rem
+		vertical-align: top
+
+	div#wellness-pics-and-gym
+		padding: 0 1rem 0 0
+
+	// div#wellness-community-contacts
+	// 	max-width: 45rem
+
+	div#wellness-community-contacts div.grouping div.contact
+		display: table-cell
+		width: 20rem
+		padding: 0 0 0 1rem
+		vertical-align: top
+
+	div#wellness-community-contacts div.grouping div.contact:first-child
+		padding: 0 1rem 0 0
+
+// --- ACCESSIBILITY
+
+#mos_accessibility_links thead
+	display: none
+
+// --- ACCOUNTING
+
+#mos_acctg_whats-new
+	padding-right: 1em
+
+	.ms-itmHoverEnabled:hover > *
+		background-color: transparent
+		border: none
+
+#mos_acctg_whats-new thead,
+#mos_acctg_links thead,
+#mos_acctg_docs thead
+	display: none
+
+
+// --- ISGT
+
+body.isgt div.cbs-Item
+	padding-bottom: 0
+
+
+
+// ------------------
+// TEMP
+// ------------------
+
+// remove below when community contacts are all handled via script
+// div#s4-workspace div.community-contact
+
+// 	a[href^="https://bmos-my"]
+// 		+button
+// 		color: $text-on-interactive-default !important
+// 		background-color: $interactive-default !important
+
+// 		&:hover
+// 			color: $text-on-interactive-active !important
+// 			background-color: $interactive-active !important
+// remove above when community contacts are all handled via script
+
+

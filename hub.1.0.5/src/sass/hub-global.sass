@@ -1,0 +1,1095 @@
+
+// sass-lint:disable no-vendor-prefixes
+
+// ----- IMPORTS
+
+@import './hub-vars'
+@import './hub-mixins'
+
+// ----- DECLARATIONS
+
+// CONTAINERS
+
+html
+	font-size: 10px
+	box-sizing: border-box
+	height: 100%
+
+*,
+*::before,
+*::after
+	box-sizing: border-box
+
+body
+	margin: 0
+	height: 100%
+
+form#aspnetForm
+	margin: 0
+
+div#s4-workspace
+	height: auto !important
+
+div#hc-container,
+div#s4-workspace,
+div.ReactModal__Content.ReactModal__Content--after-open.hc-messages-message-full-message-modal,
+div#internet-explorer-upgrade
+	+font-size-5
+	+font-weight-semilight
+	+font-family-segoe
+	color: $grey-17
+	background-color: $white
+	box-sizing: border-box
+
+// OFFICE 365 SUITE BAR
+
+// this is set to all black in the master page, so that it renders in a neutral color
+// 		as soon as the page loads; these colors override those in the master page; the strategy
+// 		is to keep the 'real' colors all managed here, rather than having to update the master
+// 		page in the future
+
+div#suiteBarDelta
+
+	div#suiteBarTop
+
+		div#O365_NavHeader
+			background-color: $grey-16
+
+			button.ms-bgc-tp
+				background-color: $interactive-default
+
+			button.ms-bgc-tdr-h:hover,
+			button.ms-bgc-tp:hover
+				background-color: $interactive-active
+
+			div.ms-fcl-tp.o365cs-nfd-normal-lineheight:first-child
+				display: none
+
+
+// INTERNET EXPLORER
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+
+	form#aspnetForm div#internet-explorer-upgrade
+		display: block !important
+
+
+// TYPE, LISTS, & LINKS
+
+
+
+	h2, h3, .ms-h2, .ms-h3, .ms-headerFont
+		
+
+	.ms-rte-wpbox
+		font-weight: 300 !important
+
+
+
+div#hc-container,
+div#s4-workspace,
+div.ReactModal__Content.ReactModal__Content--after-open.hc-messages-message-full-message-modal,
+div#internet-explorer-upgrade
+
+	h1
+		+font-family-segoe
+		+font-size-2
+		+line-height-title
+		+font-weight-regular
+		margin: $spacing-3 0 $spacing-1 0
+		color: $grey-15
+
+	h2
+		+font-family-segoe
+		+font-size-2
+		+line-height-title
+		+font-weight-light
+		margin: $spacing-3 0 $spacing-1 0
+		color: $grey-15
+
+	h3
+		+font-family-segoe
+		+font-size-3
+		+line-height-title
+		+font-weight-light
+		margin: $spacing-3 0 $spacing-1 0
+		color: $grey-15
+
+	h4
+		+font-family-segoe
+		+font-size-4
+		+line-height-title
+		+font-weight-light
+		margin: $spacing-3 0 $spacing-1 0
+		color: $grey-15
+
+	h5
+		+font-family-segoe
+		+font-size-5
+		+line-height-title
+		+font-weight-light
+		margin: $spacing-2 0 $spacing-1 0
+		color: $grey-15
+
+	h6
+		+font-family-segoe
+		+font-size-5
+		+line-height-title
+		+font-weight-light
+		margin: $spacing-2 0 $spacing-1 0
+		color: $grey-15
+
+	p
+		margin: 0 0 1rem 0
+
+	ul,
+	ol
+		list-style-position: inside
+		margin: 0 0 1rem 0
+		padding: 0
+
+	ul ul,
+	ol ol
+		margin: 0
+		padding: 0
+
+	ul li,
+	ol li
+		list-style-position: outside
+		vertical-align: text-top
+		margin: 0 0 .25rem 1.8rem
+
+	ul li
+		list-style-type: square
+		list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIElEQVQoU2NkIAAY09LS/qOrmTVrFiNMbFAoIOgLQgoAA4QUCSjONAIAAAAASUVORK5CYII=')
+
+	ul ul li
+		list-style-type: disc
+		list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAATElEQVQoU2NkIAAYQfIzZ878f//+fQZFRUWG9PR0sBgMMIIkz549CxcwNjZGUcRYUVHx/927d3AFQkJCDB0dHXBTCJtA0A1E+QKfIgBQeyMJtPI08AAAAABJRU5ErkJggg==')
+
+	a,
+	a:visited
+		+link-text
+
+		&:hover,
+		&:active
+			+link-text-active
+
+// ICON FONT
+
+@font-face
+	font-family: 'FabricMDL2Icons'
+	src: url('../../fonts/fabricmdl2icons-2.68.woff2') format('woff2'), url('../../fonts/fabricmdl2icons-2.68.woff') format('woff'), url('../../fonts/fabricmdl2icons-2.68.ttf') format('truetype')
+	font-weight: 400
+	font-style: normal
+
+
+// REACT PLACEHOLDER
+
+// TO DO: remove this section and 
+// import 'react-placeholder/lib/reactPlaceholder.css';
+
+.show-loading-animation.rect-shape,
+.show-loading-animation.round-shape,
+.show-loading-animation.text-row,
+.show-loading-animation .rect-shape,
+.show-loading-animation .round-shape,
+.show-loading-animation .text-row
+	animation: react-placeholder-pulse 1.5s infinite
+
+@keyframes react-placeholder-pulse
+
+	0%
+		opacity: 1
+  
+	50%
+		opacity: .5
+
+	100%
+		opacity: 1
+
+.mos-placeholder-column-container
+	column-gap: 1rem
+
+.mos-placeholder-column
+	margin: 0 1rem 1rem 0;
+	border-radius: .2rem;
+
+.mos-placeholder-rectangle
+	border-radius: .2rem;
+
+
+
+// STANDARD FORM ELEMENTS
+
+// requirement legend
+
+div.requirement-legend
+	padding: 1rem 0
+
+	span.requirement-indicator
+		
+		&::after
+			+font-size-6
+			display: inline-block
+			height: 2rem
+			content: '* '
+			margin-right: .5rem
+			color: $primary-pink !important
+
+	span.requirement-indicator-label
+		
+		&::after
+			+font-size-6
+			display: inline-block
+			height: 2rem
+			content: ' = required field'
+
+// form field container
+
+div.mos-react-form-field
+	+round-corners
+	margin-top: 1.5rem
+	margin-bottom: 1.5rem
+	
+// errors
+
+div.mos-react-form-field.contains-errors
+	background-color: $pink-2
+	padding: 1rem
+
+	label
+		color: $grey-18
+
+	div.mos-react-form-field-error
+		+font-size-6
+		font-style: italic
+		color: $pink-9
+
+// messages
+
+div.mos-react-form-error-message,
+div.mos-react-form-warning-message,
+div.mos-react-form-success-message
+	margin-top: 1rem
+	
+// requirement indicators
+
+label.ms-Label
+	
+	&::after
+		color: $primary-pink !important
+
+// select / dropdown
+
+div.ms-Dropdown
+
+	span.ms-Dropdown-title
+		+round-corners
+		border: 0
+		// +standard-form-control-border
+
+div.ms-Dropdown-callout
+	+round-corners
+	+small-shadow-bottom-right-medium-color
+
+// text
+
+div.ms-TextField-fieldGroup
+	+round-corners
+	border: 0
+
+	input.ms-TextField-field
+		+round-corners
+		border: 0
+
+// MS SURFACES
+	
+div.ms-Callout-main,
+div.ms-ContextualMenu-Callout
+	+round-corners
+	+small-shadow-bottom-right-light-color
+
+	div.ms-Callout-main
+		+round-corners
+
+// DATE PICKER
+
+div.ms-DatePicker-callout
+	+round-corners
+	+small-shadow-bottom-right-medium-color
+
+	div.ms-DatePicker-frame
+
+		div.ms-DatePicker-wrap
+			padding-bottom: 3rem
+
+	div[class^='divider']
+		margin-top: 0
+		margin-bottom: -2rem
+
+	div[class^='day']
+		background-color: $interactive-light
+
+	div.ms-DatePicker-day--today
+		background-color: $interactive-default
+		color: $white
+
+	div[id^='DatePickerDay-active']
+		background-color: $green-7
+		color: $white
+
+	td.ms-DatePicker-day
+		background-color: transparent
+		transition: background-color .25s
+
+	td.ms-DatePicker-day:hover
+		outline: 0
+		background-color: $interactive-light
+
+	div.ms-DatePicker-navContainer
+
+		button.ms-DatePicker-prevMonth,
+		button.ms-DatePicker-nextMonth,
+		button.ms-DatePicker-prevYear,
+		button.ms-DatePicker-nextYear
+			transition: background-color .25s, color .25s
+
+			i
+				color: $interactive-default
+
+			&:hover
+				background-color: $interactive-light
+
+				i
+					color: $interactive-active
+
+	div.ms-DatePicker-optionGrid
+
+		button.ms-DatePicker-monthOption
+			color: $interactive-default
+			transition: background-color .25s, color .25s
+			
+			&:hover
+				color: $interactive-active
+				background-color: $interactive-light
+
+	button.ms-DatePicker-goToday
+		color: $interactive-default
+		transition: background-color .25s, color .25s
+		
+		&:hover
+			color: $interactive-active
+			background-color: $interactive-light
+
+// FILE UPLOADS
+
+div#hc-container
+
+	div.mos-file-input
+		+round-corners
+		margin-top: 1rem
+		padding: 4rem 2rem
+		color: $aqua-6
+		background-color: $white
+		cursor: pointer
+
+	a.file-upload-preview
+		+round-corners
+		display: flex
+		width: 100%
+		height: 5rem
+		margin-top: 1rem
+		background-color: $green-1
+
+		&:hover
+
+			div.file-upload-preview__file-info
+				color: $interactive-active-darkened-1
+
+		div.file-upload-preview__file-image
+			+round-corners-left-only
+			width: 5rem
+			height: 5rem
+			background-repeat: no-repeat
+			background-position: center
+			background-size: cover
+
+		div.file-upload-preview__file-info
+			width: calc(100% - 5rem)
+			padding: .8rem 0 .8rem 1rem
+			color: $interactive-default-darkened-1
+
+			div.file-upload-preview__file-info__file-name
+				// height: 1.9rem
+				max-width:  calc(100% - 10rem)
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+
+		button.file-upload-preview__file-control
+			width: 3rem
+			background-color: transparent
+			border: 0
+			cursor: pointer
+
+			span.button__icon
+				+icon
+				+icon-before
+				+icon-close-before
+				+font-size-8
+				color: $interactive-default-darkened-1
+
+				&:hover
+					color: $interactive-active-darkened-1
+
+
+			span.button__text
+				+inline-hidden
+
+// PEOPLE PICKER
+
+div#hc-container
+
+	div.ms-BasePicker.ms-PeoplePicker
+		+round-corners
+		padding: .5rem
+		box-sizing: border-box
+		border: 0
+		background-color: $white
+
+		div.ms-BasePicker-text
+			border: 0
+
+			div.ms-PickerPersona-container
+				color: $grey-15
+				background-color: $grey-2
+
+			div.ms-PickerPersona-container.is-selected.personaContainerIsSelected
+				background-color: $grey-2
+
+			div.ms-Persona-primaryText
+				color: $grey-15
+
+			button.ms-Button.ms-PickerItem-removeButton
+				width: 2.6rem
+				font-size: 0
+				color: $text-on-interactive-default
+				background-color: $interactive-default
+				transition: background-color .25s
+				border: 0
+
+				&:hover
+					background-color: $interactive-active
+
+		input.ms-BasePicker-input
+			+round-corners
+			border: 0
+			color: $grey-15
+			background-color: $white
+
+// COMMAND BAR
+
+div#hc-container
+
+	button.collapsible-section-button
+		+button
+
+	
+// COMMAND BAR
+
+div#hc-container
+
+	div.command-bar
+
+		div.command-bar__items-container
+
+			ul.command-bar__items-list
+				margin: 0
+
+				li.command-bar__items-list__list-item
+					margin: 0
+					list-style: none
+
+					div.command-bar__item
+
+						button.command-bar__button
+							+button
+							+button-light
+							+straight-corners
+				
+						div.ms-SearchBox
+							border: 0 !important
+							background-color: $white-80-percent
+							height: 4rem
+							padding: 0
+							transition: background-color .25s, color .25s
+
+							div.ms-SearchBox-iconContainer
+								color: $interactive-default
+
+							// div.ms-SearchBox-iconContainer
+							// 	+icon
+							// 	+icon-before
+							// 	+icon-filter-before
+							// 	margin-right: 0
+							// 	padding-left: 1.5rem
+							// 	padding-top: 1.3rem
+							// 	overflow: hidden
+
+							// 	// transition speed and easing are copied from MSFT to
+							// 	// 		avoid a conflict with their styling
+							// 	&::before
+							// 		width: 1.5rem
+							// 		opacity: 1
+							// 		transition: width .167s ease 0s, opacity .167s ease 0s
+							// 		color: $grey-13
+
+							// 	i.ms-SearchBox-icon
+							// 		+inline-hidden
+
+							input.ms-SearchBox-field
+								border: 0
+								background-color: transparent
+								height: 4rem
+							
+							&:hover
+								background-color: $white
+
+						
+						div.ms-SearchBox.is-active
+
+							div.ms-SearchBox-iconContainer
+								color: $interactive-active
+						
+						// target MS Edge
+						@supports (-ms-ime-align: auto)
+							
+							div.ms-SearchBox
+								padding-right: 1.1rem
+								
+								input.ms-SearchBox-field
+									min-width: 20rem
+							
+
+// CONTEXTUAL MENU
+
+div.ms-Layer
+
+	div.ms-Layer-content
+
+		div.ms-Callout-container
+
+			div.ms-Callout
+		
+				div.ms-ContextualMenu
+					+round-corners
+					padding: .3rem
+
+					li.ms-ContextualMenu-item:first-child
+						
+						button.ms-ContextualMenu-link
+							+round-corners-top-only
+
+					li.ms-ContextualMenu-item:last-child
+						
+						button.ms-ContextualMenu-link
+							+round-corners-bottom-only
+
+					button.ms-ContextualMenu-link
+						+button
+						+button-light
+
+						div.ms-ContextualMenu-linkContent
+
+							span.ms-ContextualMenu-itemText
+								line-height: 100%
+	
+// ACCORDION
+
+div#hc-container
+
+	.u-position-absolute
+		position: absolute
+
+	.u-position-relative
+		position: relative
+
+	.accordion__item--has-icon
+		position: relative
+
+	.accordion__title
+		background-color: $white
+		color: $interactive-default
+		cursor: pointer
+		padding: 1rem 2rem
+		width: 100%
+		text-align: left
+		border-bottom: .1rem solid $grey-3
+		transition: color .25s
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6
+			color: $interactive-default
+			transition: color .25s
+
+	.accordion__title:hover
+		color: $interactive-active
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6
+			color: $interactive-active
+			transition: color .25s
+
+	.accordion__title[aria-expanded='true']
+		+small-shadow-bottom-right-very-light-color
+		border-bottom: 0
+		z-index: 5
+
+		&:hover
+			+small-shadow-bottom-right-light-color
+
+
+	div.accordion__item.accordion__item--hidden:last-child
+		
+		div.accordion__title
+			border-bottom: 0
+
+	.accordion__title__text
+		padding-right: 4rem
+
+	.accordion__body
+		padding: 2rem
+		display: block
+		// background-color: $grey-1
+		animation: fadein .35s ease-in
+
+
+	.accordion__body--hidden
+		display: none
+		opacity: 0
+		animation: fadein .35s ease-in
+
+
+	.accordion__title > *:last-child,
+	.accordion__body > *:last-child
+		margin-bottom: 0
+
+
+	.accordion__arrow
+		display: inline-block
+		// position: relative
+		width: 24px
+		height: 12px
+		position: absolute
+		top: 50%
+		right: 0
+		margin-top: -6px
+
+
+	.accordion__arrow::after,
+	.accordion__arrow::before
+		display: block
+		position: absolute
+		top: 50%
+		width: 11px
+		height: 1px
+		background-color: currentColor
+		content: ''
+
+
+	.accordion__arrow::before
+		left: .3rem
+		transform: rotate(45deg)
+
+
+	[aria-expanded='true'] .accordion__arrow::before,
+	[aria-selected='true'] .accordion__arrow::before
+		transform: rotate(-45deg)
+
+
+	.accordion__arrow::after
+		right: .3rem
+		transform: rotate(-45deg)
+
+
+	[aria-expanded='true'] .accordion__arrow::after,
+	[aria-selected='true'] .accordion__arrow::after
+		transform: rotate(45deg)
+
+
+	.accordion__arrow::before,
+	.accordion__arrow::after
+		transition: transform .25s ease
+
+	@keyframes fadein
+		0%
+			opacity: 0
+		
+
+		100%
+			opacity: 1
+		
+
+
+	@keyframes move-down
+		0%
+			transform: translateY(0)
+		
+		10%
+			transform: translateY(0)
+		
+		20%
+			transform: translateY(5px)
+		
+		30%
+			transform: translateY(0)
+		
+		100%
+			transform: translateY(0)
+		
+
+
+	@keyframes move-up
+		0%
+			transform: translateY(0)
+		
+		10%
+			transform: translateY(0)
+		
+		20%
+			transform: translateY(-5px)
+		
+		30%
+			transform: translateY(0)
+		
+		100%
+			transform: translateY(0)
+
+		
+	.accordion__title--animated:hover .accordion__arrow
+		animation-name: move-down
+		animation-duration: 1.5s
+
+
+	.accordion__title--animated[aria-expanded='true']:hover .accordion__arrow
+		animation-name: move-up
+		animation-duration: 1.5s
+
+	.accordion ul
+		margin: 0
+
+	.accordion__item
+
+		> li
+			list-style: none
+			margin: 0
+
+	.accordion__body
+		border-left: .1rem solid $grey-3
+
+// PERSONA CARD
+
+div#hc-container
+
+	ul.persona-cards__list
+		padding: 0
+		margin: 0
+
+	div.hc-organization__teams__department-member-body
+		padding-right: 2rem
+
+	div.hc-organization-teams-member-persona,
+	li.hc-staff-lookup-persona
+		+round-corners
+		+small-shadow-bottom-right-light-color
+		list-style: none
+		width: 100%
+		margin: 2rem 0 0 0
+		background-color: $white
+
+		&:hover
+			+small-shadow-bottom-right-medium-color
+
+		div.persona-card-dialog-header
+			vertical-align: middle
+			padding: 2rem
+			text-align: center
+			
+			span.avatar
+				+font-weight-light
+				display: inline-block
+				vertical-align: top
+				width: 7rem
+				height: 7rem
+				font-size: 4rem
+				line-height: 4rem
+				padding: 1.3rem 0 1.7rem
+				border-radius: 50%
+				color: $white
+				background-color: $purple-8
+				text-align: center
+
+			p.name
+				+font-size-2
+				padding: 2rem 2rem 1rem 0
+				color: $purple-9
+
+			p.title,
+			p.department
+				margin-bottom: 0
+				padding: 0 2rem 0 0
+			
+			p.department
+				+font-size-6
+				color: $pink-7
+		
+		ul.persona-card-dialog-body
+			padding: 1rem 0 1rem 0
+			margin: 0
+
+			li.phone-numbers,
+			li.email,
+			li.profile
+				+font-weight-regular
+				list-style: none
+				word-wrap: break-word
+				width: 100%
+				margin: 0 0 1rem 0
+				padding: 2rem
+				text-align: center
+				background-color: $coral-2
+				color: $grey-17
+			
+			i.section-icon--phone,
+			i.section-icon--email,
+			i.section-icon--profile
+				display: block
+				margin-top: .5rem
+				color: $purple-9					
+
+			li.phone-numbers
+
+				ul
+					margin: 0
+
+					li.mobile-phone-number,
+					li.office-phone-number
+						list-style: none
+						margin: 0
+
+				span.phone-number-label
+					+font-size-6
+					display: block
+
+				span.phone-number-separator
+					+inline-hidden
+
+			li.email,
+			li.profile
+
+				a
+					color: $aqua-9 !important
+
+					&:hover
+						color: $aqua-10 !important
+
+			li.email
+				padding: 0
+
+				a
+					display: block
+					padding: 2rem
+
+			p.ui-message
+				padding: 2rem
+				margin: 0
+				text-align: center
+				background-color: $coral-2
+				color: $grey-17
+
+
+	div.hc-organization-teams-member-persona
+		margin: 0
+
+// MAINTENANCE MODE
+
+body.is-in-maintenance-mode,
+body.neso-is-unavailable
+
+	div#hub-central-mount-point
+		display: none
+
+	div#overlays-screen-container
+		position: fixed
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		width: 100%
+		text-align: center
+		z-index: $z-index-overlay-screen-container
+		background-color: $white
+
+	div.overlay-screen
+		position: fixed
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		width: 100%
+		text-align: center
+		z-index: $z-index-overlay-screen
+
+		div.screen-content
+			display: inline-block
+			white-space: normal
+			vertical-align: middle
+
+			p
+				font-size: 3.5rem
+				line-height: 4rem
+				color: $grey-5
+				text-rendering: optimizelegibility
+
+			a,
+			input[type='button']
+				margin: 2rem auto 0
+
+	div#overlays-screen-container
+		
+		div.overlay-screen#maintenance-mode,
+		div.overlay-screen#neso-is-unavailable
+
+			div.screen-content
+				padding: 5rem
+
+				a
+					display: block
+					width: 30rem
+					margin-bottom: 2rem
+
+					svg
+						width: 20rem
+						
+						g.letterforms
+							fill: $white
+
+// BUTTONS
+
+div#hc-container,
+div.ms-Fabric
+
+	input[type='button'],
+	input[type='reset'],
+	input[type='submit'],
+	button
+		min-width: 0
+	
+// SECTION NOTICES
+
+form#aspnetForm
+	
+	div.section-notice
+		+round-corners
+		display: inline-block
+		padding: 1rem 2rem
+		max-width: 60rem
+		margin: 0 0 1rem
+		background-color: $white
+		
+		p.section-notice__text
+			margin: 0
+
+// BANNERS
+
+form#aspnetForm
+	
+	div.banner
+		+round-corners
+		padding: 2rem 5rem
+		background-color: $white
+
+		p.banner__text
+			+p-icon-before
+			+icon-error-before
+			max-width: 60rem
+			margin: 0 auto
+
+	div.banner--critical
+		color: $pink-8
+		background-color: $pink-2
+
+	div.banner--warning
+		color: $yellow-10
+		background-color: $yellow-1
+
+	div.banner--success
+		color: $green-9
+		background-color: $green-2
+
+// PAGINATION
+				
+div#hc-container
+
+	ul.pagination
+		display: block
+		margin-top: 2rem
+		text-align: center
+
+		> li
+			display: inline-block
+			margin: 0
+
+			> a
+				display: inline-block
+				height: 4.5rem
+				padding: 1rem 2rem
+				color: $text-on-interactive-default !important
+				background-color: $interactive-default
+				transition-property: color, background-color
+				transition-duration: .25s
+
+				&:hover
+					color: $text-on-interactive-active !important
+					background-color: $interactive-active
+
+		> li.disabled a
+			color: $white !important
+			background-color: $grey-12
+			cursor: default
+
+			&:hover
+				color: $white !important
+				background-color: $grey-12
+
+		> li.active a
+			color: $text-on-interactive-active !important
+			background-color: $interactive-active
+
+			&:hover
+				color: $text-on-interactive-active !important
+				background-color: $interactive-active
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

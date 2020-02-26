@@ -1,0 +1,181 @@
+
+// ----- IMPORTS
+
+@import './hub-vars'
+@import './hub-mixins'
+
+// ----- DECLARATIONS
+
+// --- SMALL - CONTAINERS
+
+// div#hc-container,
+// div#s4-workspace,
+// div.ReactModal__Content.ReactModal__Content--after-open.hc-messages-message-full-message-modal
+// 	+font-weight-semilight
+
+
+// TYPE, LISTS, & LINKS
+
+div#hc-container,
+div#s4-workspace,
+div.ReactModal__Content.ReactModal__Content--after-open.hc-messages-message-full-message-modal,
+div#internet-explorer-upgrade
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+		+font-weight-semilight
+
+// --- SMALL - COMMAND BAR
+
+@media screen and (max-width: $small-screen-maximum-width)
+
+	div#hc-container
+
+		div.command-bar
+
+			button.command-bar__collapsible-button
+				+button
+				+button-light
+
+				div.ms-Button-textContainer
+					+inline-hidden
+
+			div.command-bar__items-container
+
+				ul.command-bar__items-list
+					+round-corners
+					display: inline-block
+
+					li.command-bar__items-list__list-item
+
+						div.command-bar__item
+
+							button.command-bar__button
+								width: 100%
+
+								div.ms-Button-textContainer
+									text-align: left
+
+							div.ms-SearchBox
+								background-color: $grey-2
+								
+								&:hover
+									+small-shadow-bottom-right-light-color
+									color: $black
+									background-color: $grey-1
+
+					li.command-bar__items-list__list-item:first-child
+
+						div.command-bar__item
+
+							button.command-bar__button,
+							div.ms-SearchBox
+								+round-corners-top-only
+
+					li.command-bar__items-list__list-item:last-child
+
+						div.command-bar__item
+
+							button.command-bar__button,
+							div.ms-SearchBox
+								+round-corners-bottom-only
+
+// --- SMALL - PERSONA CARD
+
+@media screen and (max-width: $small-screen-maximum-width)
+
+
+	div#hc-container,
+	div#s4-workspace
+
+		div.hc-organization-teams-member-persona,
+		li.hc-staff-lookup-persona
+
+			div.persona-card-dialog-header
+
+				p.name
+					+font-size-4
+					margin-bottom: 0
+
+// --- VERY SMALL - PERSONA CARD
+
+@media screen and (max-width: $very-small-screen-maximum-width)
+
+	div#hc-container,
+	div#s4-workspace
+
+		div.hc-organization-teams-member-persona,
+		li.hc-staff-lookup-persona
+			+row
+
+			div.persona-card-dialog-header
+
+				span.avatar
+					display: none
+
+// --- SMALL - SECTION HEADERS INSIDE ACCORDION
+
+@media screen and (max-width: $small-screen-maximum-width)
+
+	div#hc-pushed-items,
+	div#hc-get-it-done,
+	div#hc-messages-all,
+	div#hc-organization,
+	div#hc-calendars-and-schedules
+
+		div.accordion__title
+
+			h1
+				+font-weight-semilight
+				+font-size-2
+
+			h2
+				+font-weight-semilight
+				+font-size-2
+
+			h3
+				+font-weight-semilight
+				+font-size-4
+
+			h4,
+			h5,
+			h6
+				+font-weight-semilight
+				+font-size-5
+
+// --- SMALL - MAINTENANCE MODE
+
+@media screen and (max-width: $small-screen-maximum-width)
+
+	body.is-in-maintenance-mode,
+	body.neso-is-unavailable
+
+		div#overlays-screen-container
+			
+			div.overlay-screen#maintenance-mode,
+			div.overlay-screen#neso-is-unavailable
+
+				div.screen-content
+					position: fixed
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+					padding-top: 30%
+					background-color: $pink-10
+
+					p.medium-screen
+						display: none
+
+
+
+
+
+
+
+
+

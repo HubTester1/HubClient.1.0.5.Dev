@@ -1,0 +1,268 @@
+
+// ----- IMPORTS
+
+@import '../../sass/hub-vars'
+@import '../../sass/hub-mixins'
+
+// ----- DECLARATIONS
+
+
+// --- LARGE - HEADER,HERO CONTAINER
+
+// @media screen and (min-width: $large-screen-minimum-width)
+	
+// 	div.hc-header-and-hero-container
+// 		background-color: $white
+// 		background-size: 100% auto, cover
+// 		background-position: top left, top center
+// 		background-image: linear-gradient(to bottom, $green-9, $green-9-50-percent 20rem, $orange-3 85rem), url('../../img/bkgrd-medium-screen.jpg')
+
+
+	// linear-gradient(to right, transparent, $green-9-20-percent 40%, $green-9-20-percent 50%, $green-9-20-percent 95%, $green-9-20-percent 100%), 
+	// , 100% auto
+	// , top left
+	// , linear-gradient(to bottom right, $blue-10-40-percent 50%, $green-5-20-percent 100%)
+// --- LARGE - HEADER
+
+@media screen and (min-width: $large-screen-minimum-width)
+	
+	// DEFAULT
+
+	div.sticky-outer-wrapper
+
+		nav#hc-navigation
+
+			ul#hc-navigation__items
+
+				li.hc-navigation__items__item
+					margin: 0
+
+					div.brand
+						height: 9rem
+
+						h1
+							margin: 0
+
+							button.brand__link__header__image
+								height: 9rem
+
+								div.svg-brand--horizontal
+									text-align: left
+
+									svg
+										height: 4.7rem
+
+					button.hc-navigation__items__item__button
+						padding: 4rem 3rem 0
+						font-size: 1.3rem
+						text-transform: uppercase
+						
+						div.ms-Button-flexContainer
+
+							i.ms-Button-icon
+								font-size: 1.3rem
+
+							div.ms-Button-textContainer
+								+override-block-hidden
+	
+	// STUCK
+
+	div.sticky-outer-wrapper.active
+
+		nav#hc-navigation
+
+			ul#hc-navigation__items
+
+				li.hc-navigation__items__item
+
+					div.brand
+						height: 7rem
+
+						h1
+
+							button.brand__link__header__image
+								height: 7rem
+
+								div.svg-brand--horizontal
+									width: 3rem
+									text-align: left
+
+									svg
+										height: 3rem
+
+										g.letterforms
+											display: none
+
+					button.hc-navigation__items__item__button
+						padding: 0 3rem
+						font-size: 1.3rem
+						text-transform: uppercase
+						
+						div.ms-Button-flexContainer
+							height: 3rem
+
+							i.ms-Button-icon
+								font-size: 1.8rem
+
+							div.ms-Button-textContainer
+								+block-hidden
+								// +override-block-hidden
+	
+				li.hc-navigation__items__item:first-child
+
+					button.brand__link__header__image
+						padding-left: 5rem
+
+						div.ms-Button-flexContainer
+
+							i.ms-Button-icon
+								margin: 0
+
+				li.hc-navigation__items__item:last-child
+
+					button.hc-navigation__items__item__button
+						padding-right: 5rem
+
+						div.ms-Button-flexContainer
+
+							i.ms-Button-icon
+								margin: 0
+
+// --- LARGE - HERO SECTION
+
+@media screen and (min-width: $large-screen-minimum-width)
+
+	div#staff-lookup-and-background-info-and-top-messages
+
+		div#staff-lookup-and-background-info
+			width: 50%
+
+// --- LARGE - PUSHED ITEMS
+
+@media screen and (min-width: $large-screen-minimum-width)
+	
+	div#hc-pushed-items
+
+		div.hc-pushed-items-placeholder
+			column-count: 5
+
+			div.hc-pushed-items-placeholder-column
+				height: 13rem !important
+
+		ul#hc-pushed-items-list
+			column-count: 5
+
+// --- LARGE - GET IT DONE
+
+@media screen and (min-width: $large-screen-minimum-width)
+	
+	div#hc-get-it-done
+
+		div.hc-get-it-done-placeholder
+			column-count: 4
+
+		div.section-notice
+			+font-size-5
+			width: calc(25% - 3.3rem)
+			padding: 5rem 3rem 1rem
+
+		div#hc-get-it-done-view-by-group,
+		div#hc-get-it-done-view-by-alpha > ul
+			column-count: 4
+
+// --- LARGE - MESSAGES
+
+@media screen and (min-width: $large-screen-minimum-width)
+		
+		// top messages
+			
+		div#hc-messages-top
+			width: 50% !important
+
+			div.hc-messages-placeholder
+				column-count: 2
+
+				div.hc-messages-placeholder-column
+					height: 22rem !important
+					background-color: $white-10-percent
+
+				div.hc-messages-placeholder-column:nth-child(3),
+				div.hc-messages-placeholder-column:nth-child(4)
+					display: block !important
+
+			ul#hc-messages-list
+				column-count: 2
+				column-gap: 0
+
+				li.mos-react-component-root:nth-child(3),
+				li.mos-react-component-root:nth-child(4)
+					display: inline-block !important
+
+				// li.mos-react-component-root
+				// 	break-inside: avoid
+				// 	page-break-inside: avoid
+				// 	overflow: hidden
+
+
+		// all messages
+		
+		div#hc-messages-all
+
+			div.hc-messages-placeholder
+				column-count: 4
+
+			div.section-notice
+				+font-size-5
+				width: calc(25% - 3rem)
+				padding: 5rem 3rem 1rem
+
+			ul#hc-messages-list
+				column-count: 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

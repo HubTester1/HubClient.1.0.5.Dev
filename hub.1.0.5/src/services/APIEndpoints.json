@@ -1,0 +1,25 @@
+{
+	"dev": {
+		"access": {
+			"base": 			"https://xmmymt42ql.execute-api.us-east-1.amazonaws.com/dev/",
+			"awsCredentials": 	"access/aws-credentials"
+		},
+		"health": {
+			"base": 			"https://kzloq7b974.execute-api.us-east-1.amazonaws.com/dev/",
+			"check": 			"health/check"
+		},
+		"email": {
+			"base": 			"https://kzloq7b974.execute-api.us-east-1.amazonaws.com/dev/",
+			"send": 			"email/send"
+		},
+		"hubMessages": {
+			"base":				"https://48qoc7sqkh.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings": 		"hubMessages/settings",
+			"messages": 		"hubMessages/messages",
+			"add":	 			"hubMessages/add",
+			"update":	 		"hubMessages/update",
+			"nextID":	 		"hubMessages/nextid",
+			"images":	 		"hubMessages/images"
+		}
+	}
+}

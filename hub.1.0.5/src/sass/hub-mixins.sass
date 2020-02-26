@@ -1,0 +1,508 @@
+
+// sass-lint:disable variable-name-format
+
+// ------------------
+// ROWS & COLUMNS
+// ------------------
+
+=row
+	display: table
+	table-layout: fixed
+	border-collapse: collapse
+
+=column
+	display: table-cell
+	vertical-align: top
+
+=flex-row
+	display: flex
+	flex-direction: row
+
+=flex-column
+	display: flex
+	flex-direction: column
+
+
+// ------------------
+// HIDDEN
+// ------------------
+
+=block-hidden
+	display: block !important
+	width: 0 !important
+	height: 0
+	padding: 0 !important
+	text-indent: 100%
+	white-space: nowrap
+	overflow: hidden
+
+=override-block-hidden
+	display: block
+	width: auto !important
+	height: auto
+	text-indent: 0 !important
+	white-space: normal
+	overflow: visible
+
+=inline-hidden
+	display: inline-block
+	width: 0
+	height: 0
+	text-indent: 100%
+	white-space: nowrap
+	overflow: hidden
+
+=colulm-hidden
+	display: table-cell
+	width: 0
+	height: 0
+	text-indent: 100%
+	white-space: nowrap
+	overflow: hidden
+
+
+// ------------------
+// TYPE
+// ------------------
+
+// --- FAMILY
+
+=font-family-fabric-icon
+	font-family: 'FabricMDL2Icons'
+
+=font-family-segoe
+	font-family: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI Regular WestEuropean', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif !important
+
+// --- SIZES
+// minor third scale
+
+=font-size-1
+	font-size: $base-font-size * 2.441
+
+=font-size-2
+	font-size: $base-font-size * 1.728
+
+=font-size-3
+	font-size: $base-font-size * 1.44
+
+=font-size-4
+	font-size: $base-font-size * 1.2
+
+=font-size-5
+	font-size: $base-font-size * 1
+
+=font-size-6
+	font-size: $base-font-size * .833
+
+=font-size-7
+	font-size: $base-font-size * .694
+
+=font-size-8
+	font-size: $base-font-size * .579
+
+// --- WEIGHTS
+
+=font-weight-light
+	font-weight: 100 !important
+
+=font-weight-semilight
+	font-weight: 300 !important
+
+=font-weight-regular
+	font-weight: 400 !important
+
+=font-weight-semibold
+	font-weight: 600 !important
+
+// --- LINE HEIGHTS
+
+=line-height-title
+	line-height: 1.25
+
+=line-height-copy
+	line-height: 1.5
+
+
+
+// ------------------
+// LINK
+// ------------------
+
+=link-text
+	text-decoration: none
+	color: $interactive-default !important
+	transition: color .25s
+
+=link-text-active
+	text-decoration: none
+	color: $interactive-active !important
+
+
+
+// ------------------
+// BORDERS
+// ------------------
+
+=straight-corners
+	border-radius: 0
+
+=round-corners
+	border-radius: .2rem
+
+=round-corners-top
+	border-top-left-radius: .2rem
+	border-top-right-radius: .2rem
+
+=round-corners-bottom
+	border-bottom-left-radius: .2rem
+	border-bottom-right-radius: .2rem
+
+=round-corners-left
+	border-top-left-radius: .2rem
+	border-bottom-left-radius: .2rem
+
+=round-corners-right
+	border-top-right-radius: .2rem
+	border-bottom-right-radius: .2rem
+
+=round-corners-top-only
+	border-top-left-radius: .2rem
+	border-top-right-radius: .2rem
+	border-bottom-left-radius: 0
+	border-bottom-right-radius: 0
+
+=round-corners-bottom-only
+	border-top-left-radius: 0
+	border-top-right-radius: 0
+	border-bottom-left-radius: .2rem
+	border-bottom-right-radius: .2rem
+
+=round-corners-left-only
+	border-top-left-radius: .2rem
+	border-bottom-left-radius: .2rem
+	border-top-right-radius: 0
+	border-bottom-right-radius: 0
+
+=round-corners-right-only
+	border-top-right-radius: .2rem
+	border-bottom-right-radius: .2rem
+	border-top-left-radius: 0
+	border-bottom-left-radius: 0
+
+=standard-form-control-border
+	border: .1rem solid $grey-7
+
+=circular
+	border-radius: 50%
+
+=circular-before
+	&::before
+		+circular
+
+=circular-after
+	&::after
+		+circular
+
+=hairline-border
+	border: 1px solid
+
+=hairline-border-before
+	&::before
+		+hairline-border
+
+=hairline-border-after
+	&::after
+		+hairline-border
+
+
+// ------------------
+// BOX SHADOW
+// ------------------
+
+=small-shadow-bottom-right-very-very-light-color
+	box-shadow: .5rem .5rem 1rem 0 $black-5-percent !important
+
+=small-shadow-bottom-right-very-light-color
+	box-shadow: .5rem .5rem 1rem 0 $black-10-percent !important
+
+=small-shadow-bottom-right-light-color
+	box-shadow: .5rem .5rem 1rem 0 $black-20-percent !important
+
+=small-shadow-bottom-right-medium-color
+	box-shadow: .5rem .5rem 1rem 0 $black-40-percent !important
+
+=small-shadow-bottom-right-dark-color
+	box-shadow: .5rem .5rem 1rem 0 $black-60-percent !important
+
+=small-shadow-bottom-left-light-color
+	box-shadow: -.5rem .5rem 1rem 0 $black-20-percent !important
+
+=small-shadow-bottom-left-medium-color
+	box-shadow: -.5rem .5rem 1rem 0 $black-40-percent !important
+
+=small-shadow-bottom-left-dark-color
+	box-shadow: -.5rem .5rem 1rem 0 $black-60-percent !important
+
+
+
+// ------------------
+// POSITION
+// ------------------
+
+=vertical-align-middle
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+
+
+
+// ------------------
+// GRID ELEMENT COLORING
+// ------------------
+
+=grid-element-darkened-1
+	background-color: $grey-2
+	color: $grey-16
+
+	a
+		color: $aqua-5 !important
+
+		&:hover
+			color: $aqua-6 !important
+
+=grid-element-darkened-2
+	background-color: $grey-3
+	color: $grey-17
+
+	a
+		color: $aqua-6 !important
+
+		&:hover
+			color: $aqua-7 !important
+
+=grid-element-darkened-3
+	background-color: $grey-5
+	color: $grey-18
+
+	a
+		color: $aqua-7 !important
+
+		&:hover
+			color: $aqua-8 !important
+
+
+// ------------------
+// ICON
+// ------------------
+
+=icon
+	+font-family-fabric-icon
+	display: inline-block
+	font-weight: inherit
+	color: inherit
+	text-rendering: auto
+	speak: none
+
+=icon-before
+	+font-size-7
+	margin-right: .8rem
+
+=icon-after
+	+font-size-7
+	margin-left: .8rem
+
+=icon-filter-before
+	&::before
+		content: $ms-icon-code-Filter
+
+=icon-close-before
+	&::before
+		content: $ms-icon-code-ChromeClose
+
+=icon-org-chart-before
+	&::before
+		content: $ms-icon-code-Org
+
+=icon-error-before
+	&::before
+		content: $ms-icon-code-Error
+
+=icon-warning-before
+	&::before
+		content: $ms-icon-code-Warning
+
+=icon-save-before
+	&::before
+		content: $ms-icon-code-Save
+
+=icon-document-before
+	&::before
+		content: $ms-icon-code-TextDocument
+
+=icon-link-before
+	&::before
+		content: $ms-icon-code-Link
+
+=icon-forward-before
+	&::before
+		content: $ms-icon-code-Forward
+
+=icon-open-file-before
+	&::before
+		content: $ms-icon-code-OpenFile
+
+=icon-reading-mode-before
+	&::before
+		content: $ms-icon-code-ReadingMode
+
+=icon-print-before
+	&::before
+		content: $ms-icon-code-Print
+
+=icon-download-before
+	&::before
+		content: $ms-icon-code-Download
+
+=icon-contact-link-before
+	&::before
+		content: $ms-icon-code-ContactLink
+
+=icon-fullscreen-after
+	&::after
+		content: $ms-icon-code-FullScreen
+
+=icon-edit-after
+	&::after
+		content: $ms-icon-code-Edit
+
+=icon-fullscreen-before
+	&::before
+		content: $ms-icon-code-FullScreen
+
+=icon-edit-before
+	&::before
+		content: $ms-icon-code-Edit
+
+
+// ------------------
+// LIST ITEM ICON BULLET
+// ------------------
+
+=list-item-icon-bullet
+	position: relative
+	padding: 0 0 0 2.25rem
+
+	&::before
+		+icon
+		+font-size-6
+		position: absolute
+		left: 0
+		top: .7rem
+
+
+// ------------------
+// PARA ICON BULLET
+// ------------------
+
+=p-icon-before
+	+list-item-icon-bullet
+
+	
+// ------------------
+// BUTTON
+// ------------------
+
+=button
+	+round-corners
+	+font-size-6
+	+font-weight-semibold
+	display: inline-block
+	float: none !important
+	box-sizing: border-box
+	min-width: 0
+	line-height: 0
+	height: 4rem
+	padding: 0 2rem
+	margin: 0 !important
+	text-align: center
+	text-decoration: none
+	border: 0
+	transition: background-color .25s
+	cursor: pointer
+
+	div.ms-Button-label
+		+font-size-6
+		+font-weight-semibold
+	
+	&:hover
+		+small-shadow-bottom-right-light-color
+
+=button-anchor
+	line-height: 4rem
+
+=button-active
+	text-decoration: none
+
+=button-colored
+	color: $text-on-interactive-default !important
+	background-color: $interactive-default !important
+
+	&:hover
+		color: $text-on-interactive-active !important
+		background-color: $interactive-active !important
+
+=button-white
+	color: $interactive-default !important
+	background-color: $text-on-interactive-default !important
+
+	&:hover
+		color: $interactive-active !important
+		background-color: $interactive-light !important
+
+=button-outlined-default
+	border: .1rem solid $interactive-default
+
+	&:hover
+		border: .1rem solid $interactive-active
+
+=button-outlined-light
+	border: .1rem solid $aqua-2
+
+	&:hover
+		border: .1rem solid $aqua-3
+
+=button-outlined-medium
+	border: .1rem solid $aqua-4
+
+	&:hover
+		border: .1rem solid $aqua-5
+
+=button-light
+	color: $text-on-interactive-light !important
+	background-color: $interactive-light !important
+
+	&:hover
+		color: $text-on-interactive-light-active !important
+		background-color: $interactive-light-active !important
+
+=button-light-outlined
+	border: .1rem solid $text-on-interactive-light
+
+	&:hover
+		border: .1rem solid $text-on-interactive-light-active
+
+=button-icon-before
+	&::before
+		+icon
+		+icon-before
+
+=button-icon-after
+	&::after
+		+icon
+		+icon-after
+
+
+
+
+
+

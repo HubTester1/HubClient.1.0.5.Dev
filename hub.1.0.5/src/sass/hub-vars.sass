@@ -1,0 +1,1085 @@
+
+@import './hub-vars-ms-icons'
+
+// ------------------
+// Z-INDEX
+// ------------------
+
+$z-index-command-bar-button-active:		1
+$z-index-sticky-header:					1000
+$z-index-modal-full-message:			2000
+$z-index-modal-full-image:				2010
+$z-index-overlay-screen-container:		3000
+$z-index-overlay-screen:				3001
+
+// ------------------
+// SCREEN WIDTHS
+// ------------------
+
+$large-screen-minimum-width:			1121px
+// $large-screen-minimum-width:			1025px
+$medium-screen-minimum-width: 			768px
+$medium-screen-maximum-width: 			1120px
+// $medium-screen-maximum-width: 			1024px
+$small-screen-maximum-width: 			767px
+$very-small-screen-maximum-width:		374px
+
+// ------------------
+// BASE TYPE SIZE
+// ------------------
+
+$base-font-size: 1.8rem
+
+// ------------------
+// SPACING SIZES
+// ------------------
+
+// an eight step powers of two scale ranging from 0 to 16rem
+$spacing-0:		0
+$spacing-1:		.25rem
+$spacing-2:		.5rem
+$spacing-3:		1rem
+$spacing-4:		2rem
+$spacing-5:		4rem
+$spacing-6:		8rem
+$spacing-7:		16rem
+
+// ------------------
+// BASE COLORS
+// ------------------
+
+// --- GREYS
+
+$black:						#000
+$white:						#fff
+
+$grey-1:					#eee
+$grey-2:					#e6e6e6
+$grey-3:					#ddd
+$grey-4:					#d4d4d4
+$grey-5:					#ccc
+$grey-6:					#c3c3c3
+$grey-7:					#bbb
+$grey-8:					#b2b2b2
+$grey-9:					#aaa
+$grey-10:					#999
+$grey-11:					#888
+$grey-12:					#777
+$grey-13:					#666
+$grey-14:					#555
+$grey-15:					#444
+$grey-16:					#333
+$grey-17:					#222
+$grey-18:					#111
+
+// --- PRIMARY
+
+$primary-red:				#da291c
+$primary-blue:				#69b3e7
+$primary-pink:				#da1884
+$primary-green:				#49c5b1
+$primary-yellow:			#fedd00
+
+// --- BOLD
+
+$bold-purple:				#490c66
+$bold-blue:					#002f56
+$bold-aqua:					#007298
+$bold-green:				#034436
+$bold-teal:					#46797a
+$bold-maroon:				#79232e
+$bold-pink:					#a60063
+$bold-orange:				#e24301
+
+// --- SUBTLE
+
+$subtle-yellow:				#f2ea9a
+$subtle-orange:				#ffc999
+$subtle-coral:				#ffb4aa
+$subtle-pink:				#e5c5d3
+$subtle-green:				#c6f2ef
+$subtle-blue:				#94c0e9
+
+// --- PINK
+
+$pink-1:				#f3e5eb
+$pink-2:				$subtle-pink
+$pink-3:				#e299bf
+$pink-4:				#df6eab
+$pink-5:				#dc4397
+$pink-6:				$primary-pink
+$pink-7:				$bold-pink
+$pink-8:				#840852
+$pink-9:				#621141
+$pink-10:				#401a31
+
+// --- PURPLE
+
+$purple-1:				#f1e8f5
+$purple-2:				#e4d3ed
+$purple-3:				#d1b6e0
+$purple-4:				#bb95d1
+$purple-5:				#a97ac6
+$purple-6:				#915eae
+$purple-7:				#794396
+$purple-8:				#61277e
+$purple-9:				$bold-purple
+$purple-10:				#2c0040
+
+// --- BLUES
+
+$blue-1:				#deebf7
+$blue-2:				#b9d5f0
+$blue-3:				$subtle-blue
+$blue-4:				$primary-blue
+$blue-5:				#5498ca
+$blue-6:				#3f7ead
+$blue-7:				#2a6390
+$blue-8:				#154973
+$blue-9:				$bold-blue
+$blue-10:				#00203b
+
+// --- AQUA
+
+$aqua-0:				#e5f9ff
+$aqua-1:				#d1eef7
+$aqua-2:				#a7d5e4
+$aqua-3:				#7dbcd1
+$aqua-4:				#53a3be
+$aqua-5:				#298aab
+$aqua-6:				$bold-aqua
+$aqua-7:				#005f7f
+$aqua-8:				#004d66
+$aqua-9:				#003a4d
+$aqua-10:				#012835
+
+// --- TEAL
+
+$teal-1:				#d5f3f3
+$teal-2:				#b8dada
+$teal-3:				#9bc2c2
+$teal-4:				#7fa9aa
+$teal-5:				#629192
+$teal-6:				$bold-teal
+$teal-7:				#346768
+$teal-8:				#235657
+$teal-9:				#124546
+$teal-10:				#013435
+
+// --- GREEN
+
+$green-1:				$subtle-green
+$green-2:				#a6e6db
+$green-3:				#87dbcd
+$green-4:				#68d0bf
+$green-5:				$primary-green
+$green-6:				#37a492
+$green-7:				#268473
+$green-8:				#146454
+$green-9:				$bold-green
+$green-10:				#033328
+
+// --- YELLOW
+
+$yellow-1:				$subtle-yellow
+$yellow-2:				#f5e64f
+$yellow-3:				$primary-yellow
+$yellow-4:				#edc414
+$yellow-5:				#e3bc13
+$yellow-10:				#453800
+
+// --- ORANGE
+
+$orange-1:				#f9e9db
+$orange-2:				#fcd9ba
+$orange-3:				$subtle-orange
+$orange-4:				#f59c66
+$orange-5:				#eb6f33
+$orange-6:				$bold-orange
+
+// --- CORAL
+
+$coral-1:				#f7e4e2
+$coral-2:				#fbccc6
+$coral-3:				$subtle-coral
+$coral-4:				#ff958b
+$coral-5:				#fc746a
+
+// ------------------
+// CONTEXT COLORS
+// ------------------
+
+// --- INTERACTIVE
+
+$interactive-default:						$aqua-7
+$interactive-active:						$aqua-8
+
+$interactive-default-darkened-1:			$aqua-8
+$interactive-active-darkened-1:				$aqua-9
+
+$interactive-default-darkened-2:			$aqua-9
+$interactive-active-darkened-2:				$aqua-10
+
+$interactive-light:							$aqua-1
+$interactive-light-active:					$aqua-2
+
+$text-on-interactive-default:				$white
+$text-on-interactive-active:				$white
+
+$text-on-interactive-light:					$aqua-7
+$text-on-interactive-light-active:			$aqua-9
+
+$interactive-on-grey18:						$aqua-1
+$text-on-interactive-on-grey18:				$aqua-7
+$interactive-active-on-grey18:				$aqua-2
+$text-on-interactive-active-on-grey18:		$aqua-8
+
+$interactive-on-light-grey:					$aqua-8
+$text-on-interactive-on-light-grey:			$white
+$interactive-active-on-light-grey:			$aqua-9
+$text-on-interactive-active-on-light-grey:	$white
+
+// ------------------
+// ALPHA COLORS
+// ------------------
+
+$black-5-percent:							rgba($black, .05)
+$black-10-percent:							rgba($black, .1)
+$black-20-percent:							rgba($black, .2)
+$black-30-percent:							rgba($black, .3)
+$black-40-percent:							rgba($black, .4)
+$black-50-percent:							rgba($black, .5)
+$black-60-percent:							rgba($black, .6)
+$black-70-percent:							rgba($black, .7)
+$black-80-percent:							rgba($black, .8)
+$black-90-percent:							rgba($black, .9)
+
+$grey-17-10-percent:						rgba($grey-17, .1)
+$grey-17-20-percent:						rgba($grey-17, .2)
+$grey-17-30-percent:						rgba($grey-17, .3)
+$grey-17-40-percent:						rgba($grey-17, .4)
+$grey-17-50-percent:						rgba($grey-17, .5)
+$grey-17-60-percent:						rgba($grey-17, .6)
+$grey-17-70-percent:						rgba($grey-17, .7)
+$grey-17-80-percent:						rgba($grey-17, .8)
+$grey-17-90-percent:						rgba($grey-17, .9)
+$grey-17-95-percent:						rgba($grey-17, .95)
+
+$grey-18-10-percent:						rgba($grey-18, .1)
+$grey-18-20-percent:						rgba($grey-18, .2)
+$grey-18-30-percent:						rgba($grey-18, .3)
+$grey-18-40-percent:						rgba($grey-18, .4)
+$grey-18-50-percent:						rgba($grey-18, .5)
+$grey-18-60-percent:						rgba($grey-18, .6)
+$grey-18-70-percent:						rgba($grey-18, .7)
+$grey-18-80-percent:						rgba($grey-18, .8)
+$grey-18-90-percent:						rgba($grey-18, .9)
+$grey-18-95-percent:						rgba($grey-18, .95)
+
+$white-5-percent:							rgba($white, .05)
+$white-10-percent:							rgba($white, .1)
+$white-20-percent:							rgba($white, .2)
+$white-30-percent:							rgba($white, .3)
+$white-40-percent:							rgba($white, .4)
+$white-50-percent:							rgba($white, .5)
+$white-60-percent:							rgba($white, .6)
+$white-70-percent:							rgba($white, .7)
+$white-80-percent:							rgba($white, .8)
+$white-90-percent:							rgba($white, .9)
+$white-95-percent:							rgba($white, .95)
+
+// YELLOW
+
+$yellow-1-10-percent:						rgba($yellow-1, .1)
+$yellow-1-20-percent:						rgba($yellow-1, .2)
+$yellow-1-30-percent:						rgba($yellow-1, .3)
+$yellow-1-40-percent:						rgba($yellow-1, .4)
+$yellow-1-50-percent:						rgba($yellow-1, .5)
+$yellow-1-60-percent:						rgba($yellow-1, .6)
+$yellow-1-70-percent:						rgba($yellow-1, .7)
+$yellow-1-80-percent:						rgba($yellow-1, .8)
+$yellow-1-90-percent:						rgba($yellow-1, .9)
+
+$yellow-2-10-percent:						rgba($yellow-2, .1)
+$yellow-2-20-percent:						rgba($yellow-2, .2)
+$yellow-2-30-percent:						rgba($yellow-2, .3)
+$yellow-2-40-percent:						rgba($yellow-2, .4)
+$yellow-2-50-percent:						rgba($yellow-2, .5)
+$yellow-2-60-percent:						rgba($yellow-2, .6)
+$yellow-2-70-percent:						rgba($yellow-2, .7)
+$yellow-2-80-percent:						rgba($yellow-2, .8)
+$yellow-2-90-percent:						rgba($yellow-2, .9)
+
+$yellow-3-10-percent:						rgba($yellow-3, .1)
+$yellow-3-20-percent:						rgba($yellow-3, .2)
+$yellow-3-30-percent:						rgba($yellow-3, .3)
+$yellow-3-40-percent:						rgba($yellow-3, .4)
+$yellow-3-50-percent:						rgba($yellow-3, .5)
+$yellow-3-60-percent:						rgba($yellow-3, .6)
+$yellow-3-70-percent:						rgba($yellow-3, .7)
+$yellow-3-80-percent:						rgba($yellow-3, .8)
+$yellow-3-90-percent:						rgba($yellow-3, .9)
+
+$yellow-4-10-percent:						rgba($yellow-4, .1)
+$yellow-4-20-percent:						rgba($yellow-4, .2)
+$yellow-4-30-percent:						rgba($yellow-4, .3)
+$yellow-4-40-percent:						rgba($yellow-4, .4)
+$yellow-4-50-percent:						rgba($yellow-4, .5)
+$yellow-4-60-percent:						rgba($yellow-4, .6)
+$yellow-4-70-percent:						rgba($yellow-4, .7)
+$yellow-4-80-percent:						rgba($yellow-4, .8)
+$yellow-4-90-percent:						rgba($yellow-4, .9)
+
+$yellow-5-10-percent:						rgba($yellow-5, .1)
+$yellow-5-20-percent:						rgba($yellow-5, .2)
+$yellow-5-30-percent:						rgba($yellow-5, .3)
+$yellow-5-40-percent:						rgba($yellow-5, .4)
+$yellow-5-50-percent:						rgba($yellow-5, .5)
+$yellow-5-60-percent:						rgba($yellow-5, .6)
+$yellow-5-70-percent:						rgba($yellow-5, .7)
+$yellow-5-80-percent:						rgba($yellow-5, .8)
+$yellow-5-90-percent:						rgba($yellow-5, .9)
+
+// AQUA
+
+$aqua-1-10-percent:						rgba($aqua-1, .1)
+$aqua-1-20-percent:						rgba($aqua-1, .2)
+$aqua-1-30-percent:						rgba($aqua-1, .3)
+$aqua-1-40-percent:						rgba($aqua-1, .4)
+$aqua-1-50-percent:						rgba($aqua-1, .5)
+$aqua-1-60-percent:						rgba($aqua-1, .6)
+$aqua-1-70-percent:						rgba($aqua-1, .7)
+$aqua-1-80-percent:						rgba($aqua-1, .8)
+$aqua-1-90-percent:						rgba($aqua-1, .9)
+
+$aqua-2-10-percent:						rgba($aqua-2, .1)
+$aqua-2-20-percent:						rgba($aqua-2, .2)
+$aqua-2-30-percent:						rgba($aqua-2, .3)
+$aqua-2-40-percent:						rgba($aqua-2, .4)
+$aqua-2-50-percent:						rgba($aqua-2, .5)
+$aqua-2-60-percent:						rgba($aqua-2, .6)
+$aqua-2-70-percent:						rgba($aqua-2, .7)
+$aqua-2-80-percent:						rgba($aqua-2, .8)
+$aqua-2-90-percent:						rgba($aqua-2, .9)
+
+$aqua-3-10-percent:						rgba($aqua-3, .1)
+$aqua-3-20-percent:						rgba($aqua-3, .2)
+$aqua-3-30-percent:						rgba($aqua-3, .3)
+$aqua-3-40-percent:						rgba($aqua-3, .4)
+$aqua-3-50-percent:						rgba($aqua-3, .5)
+$aqua-3-60-percent:						rgba($aqua-3, .6)
+$aqua-3-70-percent:						rgba($aqua-3, .7)
+$aqua-3-80-percent:						rgba($aqua-3, .8)
+$aqua-3-90-percent:						rgba($aqua-3, .9)
+
+$aqua-4-10-percent:						rgba($aqua-4, .1)
+$aqua-4-20-percent:						rgba($aqua-4, .2)
+$aqua-4-30-percent:						rgba($aqua-4, .3)
+$aqua-4-40-percent:						rgba($aqua-4, .4)
+$aqua-4-50-percent:						rgba($aqua-4, .5)
+$aqua-4-60-percent:						rgba($aqua-4, .6)
+$aqua-4-70-percent:						rgba($aqua-4, .7)
+$aqua-4-80-percent:						rgba($aqua-4, .8)
+$aqua-4-90-percent:						rgba($aqua-4, .9)
+
+$aqua-5-10-percent:						rgba($aqua-5, .1)
+$aqua-5-20-percent:						rgba($aqua-5, .2)
+$aqua-5-30-percent:						rgba($aqua-5, .3)
+$aqua-5-40-percent:						rgba($aqua-5, .4)
+$aqua-5-50-percent:						rgba($aqua-5, .5)
+$aqua-5-60-percent:						rgba($aqua-5, .6)
+$aqua-5-70-percent:						rgba($aqua-5, .7)
+$aqua-5-80-percent:						rgba($aqua-5, .8)
+$aqua-5-90-percent:						rgba($aqua-5, .9)
+
+
+// GREEN
+
+$green-1-10-percent:						rgba($green-1, .1)
+$green-1-20-percent:						rgba($green-1, .2)
+$green-1-30-percent:						rgba($green-1, .3)
+$green-1-40-percent:						rgba($green-1, .4)
+$green-1-50-percent:						rgba($green-1, .5)
+$green-1-60-percent:						rgba($green-1, .6)
+$green-1-70-percent:						rgba($green-1, .7)
+$green-1-80-percent:						rgba($green-1, .8)
+$green-1-90-percent:						rgba($green-1, .9)
+
+$green-2-10-percent:						rgba($green-2, .1)
+$green-2-20-percent:						rgba($green-2, .2)
+$green-2-30-percent:						rgba($green-2, .3)
+$green-2-40-percent:						rgba($green-2, .4)
+$green-2-50-percent:						rgba($green-2, .5)
+$green-2-60-percent:						rgba($green-2, .6)
+$green-2-70-percent:						rgba($green-2, .7)
+$green-2-80-percent:						rgba($green-2, .8)
+$green-2-90-percent:						rgba($green-2, .9)
+
+$green-3-10-percent:						rgba($green-3, .1)
+$green-3-20-percent:						rgba($green-3, .2)
+$green-3-30-percent:						rgba($green-3, .3)
+$green-3-40-percent:						rgba($green-3, .4)
+$green-3-50-percent:						rgba($green-3, .5)
+$green-3-60-percent:						rgba($green-3, .6)
+$green-3-70-percent:						rgba($green-3, .7)
+$green-3-80-percent:						rgba($green-3, .8)
+$green-3-90-percent:						rgba($green-3, .9)
+
+$green-4-10-percent:						rgba($green-4, .1)
+$green-4-20-percent:						rgba($green-4, .2)
+$green-4-30-percent:						rgba($green-4, .3)
+$green-4-40-percent:						rgba($green-4, .4)
+$green-4-50-percent:						rgba($green-4, .5)
+$green-4-60-percent:						rgba($green-4, .6)
+$green-4-70-percent:						rgba($green-4, .7)
+$green-4-80-percent:						rgba($green-4, .8)
+$green-4-90-percent:						rgba($green-4, .9)
+
+$green-5-10-percent:						rgba($green-5, .1)
+$green-5-20-percent:						rgba($green-5, .2)
+$green-5-30-percent:						rgba($green-5, .3)
+$green-5-40-percent:						rgba($green-5, .4)
+$green-5-50-percent:						rgba($green-5, .5)
+$green-5-60-percent:						rgba($green-5, .6)
+$green-5-70-percent:						rgba($green-5, .7)
+$green-5-80-percent:						rgba($green-5, .8)
+$green-5-90-percent:						rgba($green-5, .9)
+
+$green-6-10-percent:						rgba($green-6, .1)
+$green-6-20-percent:						rgba($green-6, .2)
+$green-6-30-percent:						rgba($green-6, .3)
+$green-6-40-percent:						rgba($green-6, .4)
+$green-6-50-percent:						rgba($green-6, .5)
+$green-6-60-percent:						rgba($green-6, .6)
+$green-6-70-percent:						rgba($green-6, .7)
+$green-6-80-percent:						rgba($green-6, .8)
+$green-6-90-percent:						rgba($green-6, .9)
+
+$green-7-10-percent:						rgba($green-7, .1)
+$green-7-20-percent:						rgba($green-7, .2)
+$green-7-30-percent:						rgba($green-7, .3)
+$green-7-40-percent:						rgba($green-7, .4)
+$green-7-50-percent:						rgba($green-7, .5)
+$green-7-60-percent:						rgba($green-7, .6)
+$green-7-70-percent:						rgba($green-7, .7)
+$green-7-80-percent:						rgba($green-7, .8)
+$green-7-90-percent:						rgba($green-7, .9)
+
+$green-8-10-percent:						rgba($green-8, .1)
+$green-8-20-percent:						rgba($green-8, .2)
+$green-8-30-percent:						rgba($green-8, .3)
+$green-8-40-percent:						rgba($green-8, .4)
+$green-8-50-percent:						rgba($green-8, .5)
+$green-8-60-percent:						rgba($green-8, .6)
+$green-8-70-percent:						rgba($green-8, .7)
+$green-8-80-percent:						rgba($green-8, .8)
+$green-8-90-percent:						rgba($green-8, .9)
+
+$green-9-10-percent:						rgba($green-9, .1)
+$green-9-20-percent:						rgba($green-9, .2)
+$green-9-30-percent:						rgba($green-9, .3)
+$green-9-40-percent:						rgba($green-9, .4)
+$green-9-50-percent:						rgba($green-9, .5)
+$green-9-60-percent:						rgba($green-9, .6)
+$green-9-70-percent:						rgba($green-9, .7)
+$green-9-80-percent:						rgba($green-9, .8)
+$green-9-90-percent:						rgba($green-9, .9)
+
+$green-10-10-percent:						rgba($green-10, .1)
+$green-10-20-percent:						rgba($green-10, .2)
+$green-10-30-percent:						rgba($green-10, .3)
+$green-10-40-percent:						rgba($green-10, .4)
+$green-10-50-percent:						rgba($green-10, .5)
+$green-10-60-percent:						rgba($green-10, .6)
+$green-10-70-percent:						rgba($green-10, .7)
+$green-10-80-percent:						rgba($green-10, .8)
+$green-10-90-percent:						rgba($green-10, .9)
+
+// BLUE
+
+
+$blue-1-10-percent:						rgba($blue-1, .1)
+$blue-1-20-percent:						rgba($blue-1, .2)
+$blue-1-30-percent:						rgba($blue-1, .3)
+$blue-1-40-percent:						rgba($blue-1, .4)
+$blue-1-50-percent:						rgba($blue-1, .5)
+$blue-1-60-percent:						rgba($blue-1, .6)
+$blue-1-70-percent:						rgba($blue-1, .7)
+$blue-1-80-percent:						rgba($blue-1, .8)
+$blue-1-90-percent:						rgba($blue-1, .9)
+
+$blue-2-10-percent:						rgba($blue-2, .1)
+$blue-2-20-percent:						rgba($blue-2, .2)
+$blue-2-30-percent:						rgba($blue-2, .3)
+$blue-2-40-percent:						rgba($blue-2, .4)
+$blue-2-50-percent:						rgba($blue-2, .5)
+$blue-2-60-percent:						rgba($blue-2, .6)
+$blue-2-70-percent:						rgba($blue-2, .7)
+$blue-2-80-percent:						rgba($blue-2, .8)
+$blue-2-90-percent:						rgba($blue-2, .9)
+
+$blue-3-10-percent:						rgba($blue-3, .1)
+$blue-3-20-percent:						rgba($blue-3, .2)
+$blue-3-30-percent:						rgba($blue-3, .3)
+$blue-3-40-percent:						rgba($blue-3, .4)
+$blue-3-50-percent:						rgba($blue-3, .5)
+$blue-3-60-percent:						rgba($blue-3, .6)
+$blue-3-70-percent:						rgba($blue-3, .7)
+$blue-3-80-percent:						rgba($blue-3, .8)
+$blue-3-90-percent:						rgba($blue-3, .9)
+
+$blue-4-10-percent:						rgba($blue-4, .1)
+$blue-4-20-percent:						rgba($blue-4, .2)
+$blue-4-30-percent:						rgba($blue-4, .3)
+$blue-4-40-percent:						rgba($blue-4, .4)
+$blue-4-50-percent:						rgba($blue-4, .5)
+$blue-4-60-percent:						rgba($blue-4, .6)
+$blue-4-70-percent:						rgba($blue-4, .7)
+$blue-4-80-percent:						rgba($blue-4, .8)
+$blue-4-90-percent:						rgba($blue-4, .9)
+
+$blue-5-10-percent:						rgba($blue-5, .1)
+$blue-5-20-percent:						rgba($blue-5, .2)
+$blue-5-30-percent:						rgba($blue-5, .3)
+$blue-5-40-percent:						rgba($blue-5, .4)
+$blue-5-50-percent:						rgba($blue-5, .5)
+$blue-5-60-percent:						rgba($blue-5, .6)
+$blue-5-70-percent:						rgba($blue-5, .7)
+$blue-5-80-percent:						rgba($blue-5, .8)
+$blue-5-90-percent:						rgba($blue-5, .9)
+
+$blue-6-10-percent:						rgba($blue-6, .1)
+$blue-6-20-percent:						rgba($blue-6, .2)
+$blue-6-30-percent:						rgba($blue-6, .3)
+$blue-6-40-percent:						rgba($blue-6, .4)
+$blue-6-50-percent:						rgba($blue-6, .5)
+$blue-6-60-percent:						rgba($blue-6, .6)
+$blue-6-70-percent:						rgba($blue-6, .7)
+$blue-6-80-percent:						rgba($blue-6, .8)
+$blue-6-90-percent:						rgba($blue-6, .9)
+
+$blue-7-10-percent:						rgba($blue-7, .1)
+$blue-7-20-percent:						rgba($blue-7, .2)
+$blue-7-30-percent:						rgba($blue-7, .3)
+$blue-7-40-percent:						rgba($blue-7, .4)
+$blue-7-50-percent:						rgba($blue-7, .5)
+$blue-7-60-percent:						rgba($blue-7, .6)
+$blue-7-70-percent:						rgba($blue-7, .7)
+$blue-7-80-percent:						rgba($blue-7, .8)
+$blue-7-90-percent:						rgba($blue-7, .9)
+
+$blue-8-10-percent:						rgba($blue-8, .1)
+$blue-8-20-percent:						rgba($blue-8, .2)
+$blue-8-30-percent:						rgba($blue-8, .3)
+$blue-8-40-percent:						rgba($blue-8, .4)
+$blue-8-50-percent:						rgba($blue-8, .5)
+$blue-8-60-percent:						rgba($blue-8, .6)
+$blue-8-70-percent:						rgba($blue-8, .7)
+$blue-8-80-percent:						rgba($blue-8, .8)
+$blue-8-90-percent:						rgba($blue-8, .9)
+
+$blue-9-10-percent:						rgba($blue-9, .1)
+$blue-9-20-percent:						rgba($blue-9, .2)
+$blue-9-30-percent:						rgba($blue-9, .3)
+$blue-9-40-percent:						rgba($blue-9, .4)
+$blue-9-50-percent:						rgba($blue-9, .5)
+$blue-9-60-percent:						rgba($blue-9, .6)
+$blue-9-70-percent:						rgba($blue-9, .7)
+$blue-9-80-percent:						rgba($blue-9, .8)
+$blue-9-90-percent:						rgba($blue-9, .9)
+
+$blue-10-10-percent:						rgba($blue-10, .1)
+$blue-10-20-percent:						rgba($blue-10, .2)
+$blue-10-30-percent:						rgba($blue-10, .3)
+$blue-10-40-percent:						rgba($blue-10, .4)
+$blue-10-50-percent:						rgba($blue-10, .5)
+$blue-10-60-percent:						rgba($blue-10, .6)
+$blue-10-70-percent:						rgba($blue-10, .7)
+$blue-10-80-percent:						rgba($blue-10, .8)
+$blue-10-90-percent:						rgba($blue-10, .9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CORAL
+
+$coral-1-10-percent:						rgba($coral-1, .1)
+$coral-1-20-percent:						rgba($coral-1, .2)
+$coral-1-30-percent:						rgba($coral-1, .3)
+$coral-1-40-percent:						rgba($coral-1, .4)
+$coral-1-50-percent:						rgba($coral-1, .5)
+$coral-1-60-percent:						rgba($coral-1, .6)
+$coral-1-70-percent:						rgba($coral-1, .7)
+$coral-1-80-percent:						rgba($coral-1, .8)
+$coral-1-90-percent:						rgba($coral-1, .9)
+
+$coral-2-10-percent:						rgba($coral-2, .1)
+$coral-2-20-percent:						rgba($coral-2, .2)
+$coral-2-30-percent:						rgba($coral-2, .3)
+$coral-2-40-percent:						rgba($coral-2, .4)
+$coral-2-50-percent:						rgba($coral-2, .5)
+$coral-2-60-percent:						rgba($coral-2, .6)
+$coral-2-70-percent:						rgba($coral-2, .7)
+$coral-2-80-percent:						rgba($coral-2, .8)
+$coral-2-90-percent:						rgba($coral-2, .9)
+
+$coral-3-10-percent:						rgba($coral-3, .1)
+$coral-3-20-percent:						rgba($coral-3, .2)
+$coral-3-30-percent:						rgba($coral-3, .3)
+$coral-3-40-percent:						rgba($coral-3, .4)
+$coral-3-50-percent:						rgba($coral-3, .5)
+$coral-3-60-percent:						rgba($coral-3, .6)
+$coral-3-70-percent:						rgba($coral-3, .7)
+$coral-3-80-percent:						rgba($coral-3, .8)
+$coral-3-90-percent:						rgba($coral-3, .9)
+
+$coral-4-10-percent:						rgba($coral-4, .1)
+$coral-4-20-percent:						rgba($coral-4, .2)
+$coral-4-30-percent:						rgba($coral-4, .3)
+$coral-4-40-percent:						rgba($coral-4, .4)
+$coral-4-50-percent:						rgba($coral-4, .5)
+$coral-4-60-percent:						rgba($coral-4, .6)
+$coral-4-70-percent:						rgba($coral-4, .7)
+$coral-4-80-percent:						rgba($coral-4, .8)
+$coral-4-90-percent:						rgba($coral-4, .9)
+
+$coral-5-10-percent:						rgba($coral-5, .1)
+$coral-5-20-percent:						rgba($coral-5, .2)
+$coral-5-30-percent:						rgba($coral-5, .3)
+$coral-5-40-percent:						rgba($coral-5, .4)
+$coral-5-50-percent:						rgba($coral-5, .5)
+$coral-5-60-percent:						rgba($coral-5, .6)
+$coral-5-70-percent:						rgba($coral-5, .7)
+$coral-5-80-percent:						rgba($coral-5, .8)
+$coral-5-90-percent:						rgba($coral-5, .9)
+
+// ORANGE
+
+$orange-1-10-percent:						rgba($orange-1, .1)
+$orange-1-20-percent:						rgba($orange-1, .2)
+$orange-1-30-percent:						rgba($orange-1, .3)
+$orange-1-40-percent:						rgba($orange-1, .4)
+$orange-1-50-percent:						rgba($orange-1, .5)
+$orange-1-60-percent:						rgba($orange-1, .6)
+$orange-1-70-percent:						rgba($orange-1, .7)
+$orange-1-80-percent:						rgba($orange-1, .8)
+$orange-1-90-percent:						rgba($orange-1, .9)
+
+$orange-2-10-percent:						rgba($orange-2, .1)
+$orange-2-20-percent:						rgba($orange-2, .2)
+$orange-2-30-percent:						rgba($orange-2, .3)
+$orange-2-40-percent:						rgba($orange-2, .4)
+$orange-2-50-percent:						rgba($orange-2, .5)
+$orange-2-60-percent:						rgba($orange-2, .6)
+$orange-2-70-percent:						rgba($orange-2, .7)
+$orange-2-80-percent:						rgba($orange-2, .8)
+$orange-2-90-percent:						rgba($orange-2, .9)
+
+$orange-3-10-percent:						rgba($orange-3, .1)
+$orange-3-20-percent:						rgba($orange-3, .2)
+$orange-3-30-percent:						rgba($orange-3, .3)
+$orange-3-40-percent:						rgba($orange-3, .4)
+$orange-3-50-percent:						rgba($orange-3, .5)
+$orange-3-60-percent:						rgba($orange-3, .6)
+$orange-3-70-percent:						rgba($orange-3, .7)
+$orange-3-80-percent:						rgba($orange-3, .8)
+$orange-3-90-percent:						rgba($orange-3, .9)
+
+$orange-4-10-percent:						rgba($orange-4, .1)
+$orange-4-20-percent:						rgba($orange-4, .2)
+$orange-4-30-percent:						rgba($orange-4, .3)
+$orange-4-40-percent:						rgba($orange-4, .4)
+$orange-4-50-percent:						rgba($orange-4, .5)
+$orange-4-60-percent:						rgba($orange-4, .6)
+$orange-4-70-percent:						rgba($orange-4, .7)
+$orange-4-80-percent:						rgba($orange-4, .8)
+$orange-4-90-percent:						rgba($orange-4, .9)
+
+$orange-5-10-percent:						rgba($orange-5, .1)
+$orange-5-20-percent:						rgba($orange-5, .2)
+$orange-5-30-percent:						rgba($orange-5, .3)
+$orange-5-40-percent:						rgba($orange-5, .4)
+$orange-5-50-percent:						rgba($orange-5, .5)
+$orange-5-60-percent:						rgba($orange-5, .6)
+$orange-5-70-percent:						rgba($orange-5, .7)
+$orange-5-80-percent:						rgba($orange-5, .8)
+$orange-5-90-percent:						rgba($orange-5, .9)
+
+$orange-6-10-percent:						rgba($orange-6, .1)
+$orange-6-20-percent:						rgba($orange-6, .2)
+$orange-6-30-percent:						rgba($orange-6, .3)
+$orange-6-40-percent:						rgba($orange-6, .4)
+$orange-6-50-percent:						rgba($orange-6, .5)
+$orange-6-60-percent:						rgba($orange-6, .6)
+$orange-6-70-percent:						rgba($orange-6, .7)
+$orange-6-80-percent:						rgba($orange-6, .8)
+$orange-6-90-percent:						rgba($orange-6, .9)
+
+// PINK
+
+$pink-1-10-percent:						rgba($pink-1, .1)
+$pink-1-20-percent:						rgba($pink-1, .2)
+$pink-1-30-percent:						rgba($pink-1, .3)
+$pink-1-40-percent:						rgba($pink-1, .4)
+$pink-1-50-percent:						rgba($pink-1, .5)
+$pink-1-60-percent:						rgba($pink-1, .6)
+$pink-1-70-percent:						rgba($pink-1, .7)
+$pink-1-80-percent:						rgba($pink-1, .8)
+$pink-1-90-percent:						rgba($pink-1, .9)
+
+$pink-2-10-percent:						rgba($pink-2, .1)
+$pink-2-20-percent:						rgba($pink-2, .2)
+$pink-2-30-percent:						rgba($pink-2, .3)
+$pink-2-40-percent:						rgba($pink-2, .4)
+$pink-2-50-percent:						rgba($pink-2, .5)
+$pink-2-60-percent:						rgba($pink-2, .6)
+$pink-2-70-percent:						rgba($pink-2, .7)
+$pink-2-80-percent:						rgba($pink-2, .8)
+$pink-2-90-percent:						rgba($pink-2, .9)
+
+$pink-3-10-percent:						rgba($pink-3, .1)
+$pink-3-20-percent:						rgba($pink-3, .2)
+$pink-3-30-percent:						rgba($pink-3, .3)
+$pink-3-40-percent:						rgba($pink-3, .4)
+$pink-3-50-percent:						rgba($pink-3, .5)
+$pink-3-60-percent:						rgba($pink-3, .6)
+$pink-3-70-percent:						rgba($pink-3, .7)
+$pink-3-80-percent:						rgba($pink-3, .8)
+$pink-3-90-percent:						rgba($pink-3, .9)
+
+$pink-4-10-percent:						rgba($pink-4, .1)
+$pink-4-20-percent:						rgba($pink-4, .2)
+$pink-4-30-percent:						rgba($pink-4, .3)
+$pink-4-40-percent:						rgba($pink-4, .4)
+$pink-4-50-percent:						rgba($pink-4, .5)
+$pink-4-60-percent:						rgba($pink-4, .6)
+$pink-4-70-percent:						rgba($pink-4, .7)
+$pink-4-80-percent:						rgba($pink-4, .8)
+$pink-4-90-percent:						rgba($pink-4, .9)
+
+$pink-5-10-percent:						rgba($pink-5, .1)
+$pink-5-20-percent:						rgba($pink-5, .2)
+$pink-5-30-percent:						rgba($pink-5, .3)
+$pink-5-40-percent:						rgba($pink-5, .4)
+$pink-5-50-percent:						rgba($pink-5, .5)
+$pink-5-60-percent:						rgba($pink-5, .6)
+$pink-5-70-percent:						rgba($pink-5, .7)
+$pink-5-80-percent:						rgba($pink-5, .8)
+$pink-5-90-percent:						rgba($pink-5, .9)
+
+$pink-6-10-percent:						rgba($pink-6, .1)
+$pink-6-20-percent:						rgba($pink-6, .2)
+$pink-6-30-percent:						rgba($pink-6, .3)
+$pink-6-40-percent:						rgba($pink-6, .4)
+$pink-6-50-percent:						rgba($pink-6, .5)
+$pink-6-60-percent:						rgba($pink-6, .6)
+$pink-6-70-percent:						rgba($pink-6, .7)
+$pink-6-80-percent:						rgba($pink-6, .8)
+$pink-6-90-percent:						rgba($pink-6, .9)
+
+$pink-7-10-percent:						rgba($pink-7, .1)
+$pink-7-20-percent:						rgba($pink-7, .2)
+$pink-7-30-percent:						rgba($pink-7, .3)
+$pink-7-40-percent:						rgba($pink-7, .4)
+$pink-7-50-percent:						rgba($pink-7, .5)
+$pink-7-60-percent:						rgba($pink-7, .6)
+$pink-7-70-percent:						rgba($pink-7, .7)
+$pink-7-80-percent:						rgba($pink-7, .8)
+$pink-7-90-percent:						rgba($pink-7, .9)
+
+$pink-8-10-percent:						rgba($pink-8, .1)
+$pink-8-20-percent:						rgba($pink-8, .2)
+$pink-8-30-percent:						rgba($pink-8, .3)
+$pink-8-40-percent:						rgba($pink-8, .4)
+$pink-8-50-percent:						rgba($pink-8, .5)
+$pink-8-60-percent:						rgba($pink-8, .6)
+$pink-8-70-percent:						rgba($pink-8, .7)
+$pink-8-80-percent:						rgba($pink-8, .8)
+$pink-8-90-percent:						rgba($pink-8, .9)
+
+$pink-9-10-percent:						rgba($pink-9, .1)
+$pink-9-20-percent:						rgba($pink-9, .2)
+$pink-9-30-percent:						rgba($pink-9, .3)
+$pink-9-40-percent:						rgba($pink-9, .4)
+$pink-9-50-percent:						rgba($pink-9, .5)
+$pink-9-60-percent:						rgba($pink-9, .6)
+$pink-9-70-percent:						rgba($pink-9, .7)
+$pink-9-80-percent:						rgba($pink-9, .8)
+$pink-9-90-percent:						rgba($pink-9, .9)
+
+$pink-10-10-percent:						rgba($pink-10, .1)
+$pink-10-20-percent:						rgba($pink-10, .2)
+$pink-10-30-percent:						rgba($pink-10, .3)
+$pink-10-40-percent:						rgba($pink-10, .4)
+$pink-10-50-percent:						rgba($pink-10, .5)
+$pink-10-60-percent:						rgba($pink-10, .6)
+$pink-10-70-percent:						rgba($pink-10, .7)
+$pink-10-80-percent:						rgba($pink-10, .8)
+$pink-10-90-percent:						rgba($pink-10, .9)
+
+// AQUA
+
+$aqua-1-10-percent:						rgba($aqua-1, .1)
+$aqua-1-20-percent:						rgba($aqua-1, .2)
+$aqua-1-30-percent:						rgba($aqua-1, .3)
+$aqua-1-40-percent:						rgba($aqua-1, .4)
+$aqua-1-50-percent:						rgba($aqua-1, .5)
+$aqua-1-60-percent:						rgba($aqua-1, .6)
+$aqua-1-70-percent:						rgba($aqua-1, .7)
+$aqua-1-80-percent:						rgba($aqua-1, .8)
+$aqua-1-90-percent:						rgba($aqua-1, .9)
+
+$aqua-2-10-percent:						rgba($aqua-2, .1)
+$aqua-2-20-percent:						rgba($aqua-2, .2)
+$aqua-2-30-percent:						rgba($aqua-2, .3)
+$aqua-2-40-percent:						rgba($aqua-2, .4)
+$aqua-2-50-percent:						rgba($aqua-2, .5)
+$aqua-2-60-percent:						rgba($aqua-2, .6)
+$aqua-2-70-percent:						rgba($aqua-2, .7)
+$aqua-2-80-percent:						rgba($aqua-2, .8)
+$aqua-2-90-percent:						rgba($aqua-2, .9)
+
+$aqua-3-10-percent:						rgba($aqua-3, .1)
+$aqua-3-20-percent:						rgba($aqua-3, .2)
+$aqua-3-30-percent:						rgba($aqua-3, .3)
+$aqua-3-40-percent:						rgba($aqua-3, .4)
+$aqua-3-50-percent:						rgba($aqua-3, .5)
+$aqua-3-60-percent:						rgba($aqua-3, .6)
+$aqua-3-70-percent:						rgba($aqua-3, .7)
+$aqua-3-80-percent:						rgba($aqua-3, .8)
+$aqua-3-90-percent:						rgba($aqua-3, .9)
+
+$aqua-4-10-percent:						rgba($aqua-4, .1)
+$aqua-4-20-percent:						rgba($aqua-4, .2)
+$aqua-4-30-percent:						rgba($aqua-4, .3)
+$aqua-4-40-percent:						rgba($aqua-4, .4)
+$aqua-4-50-percent:						rgba($aqua-4, .5)
+$aqua-4-60-percent:						rgba($aqua-4, .6)
+$aqua-4-70-percent:						rgba($aqua-4, .7)
+$aqua-4-80-percent:						rgba($aqua-4, .8)
+$aqua-4-90-percent:						rgba($aqua-4, .9)
+
+$aqua-5-10-percent:						rgba($aqua-5, .1)
+$aqua-5-20-percent:						rgba($aqua-5, .2)
+$aqua-5-30-percent:						rgba($aqua-5, .3)
+$aqua-5-40-percent:						rgba($aqua-5, .4)
+$aqua-5-50-percent:						rgba($aqua-5, .5)
+$aqua-5-60-percent:						rgba($aqua-5, .6)
+$aqua-5-70-percent:						rgba($aqua-5, .7)
+$aqua-5-80-percent:						rgba($aqua-5, .8)
+$aqua-5-90-percent:						rgba($aqua-5, .9)
+
+$aqua-6-10-percent:						rgba($aqua-6, .1)
+$aqua-6-20-percent:						rgba($aqua-6, .2)
+$aqua-6-30-percent:						rgba($aqua-6, .3)
+$aqua-6-40-percent:						rgba($aqua-6, .4)
+$aqua-6-50-percent:						rgba($aqua-6, .5)
+$aqua-6-60-percent:						rgba($aqua-6, .6)
+$aqua-6-70-percent:						rgba($aqua-6, .7)
+$aqua-6-80-percent:						rgba($aqua-6, .8)
+$aqua-6-90-percent:						rgba($aqua-6, .9)
+
+$aqua-7-10-percent:						rgba($aqua-7, .1)
+$aqua-7-20-percent:						rgba($aqua-7, .2)
+$aqua-7-30-percent:						rgba($aqua-7, .3)
+$aqua-7-40-percent:						rgba($aqua-7, .4)
+$aqua-7-50-percent:						rgba($aqua-7, .5)
+$aqua-7-60-percent:						rgba($aqua-7, .6)
+$aqua-7-70-percent:						rgba($aqua-7, .7)
+$aqua-7-80-percent:						rgba($aqua-7, .8)
+$aqua-7-90-percent:						rgba($aqua-7, .9)
+
+$aqua-8-10-percent:						rgba($aqua-8, .1)
+$aqua-8-20-percent:						rgba($aqua-8, .2)
+$aqua-8-30-percent:						rgba($aqua-8, .3)
+$aqua-8-40-percent:						rgba($aqua-8, .4)
+$aqua-8-50-percent:						rgba($aqua-8, .5)
+$aqua-8-60-percent:						rgba($aqua-8, .6)
+$aqua-8-70-percent:						rgba($aqua-8, .7)
+$aqua-8-80-percent:						rgba($aqua-8, .8)
+$aqua-8-90-percent:						rgba($aqua-8, .9)
+
+$aqua-9-10-percent:						rgba($aqua-9, .1)
+$aqua-9-20-percent:						rgba($aqua-9, .2)
+$aqua-9-30-percent:						rgba($aqua-9, .3)
+$aqua-9-40-percent:						rgba($aqua-9, .4)
+$aqua-9-50-percent:						rgba($aqua-9, .5)
+$aqua-9-60-percent:						rgba($aqua-9, .6)
+$aqua-9-70-percent:						rgba($aqua-9, .7)
+$aqua-9-80-percent:						rgba($aqua-9, .8)
+$aqua-9-90-percent:						rgba($aqua-9, .9)
+
+$aqua-10-10-percent:						rgba($aqua-10, .1)
+$aqua-10-20-percent:						rgba($aqua-10, .2)
+$aqua-10-30-percent:						rgba($aqua-10, .3)
+$aqua-10-40-percent:						rgba($aqua-10, .4)
+$aqua-10-50-percent:						rgba($aqua-10, .5)
+$aqua-10-60-percent:						rgba($aqua-10, .6)
+$aqua-10-70-percent:						rgba($aqua-10, .7)
+$aqua-10-80-percent:						rgba($aqua-10, .8)
+$aqua-10-90-percent:						rgba($aqua-10, .9)
+
+// PURPLE
+
+$purple-1-10-percent:						rgba($purple-1, .1)
+$purple-1-20-percent:						rgba($purple-1, .2)
+$purple-1-30-percent:						rgba($purple-1, .3)
+$purple-1-40-percent:						rgba($purple-1, .4)
+$purple-1-50-percent:						rgba($purple-1, .5)
+$purple-1-60-percent:						rgba($purple-1, .6)
+$purple-1-70-percent:						rgba($purple-1, .7)
+$purple-1-80-percent:						rgba($purple-1, .8)
+$purple-1-90-percent:						rgba($purple-1, .9)
+
+$purple-2-10-percent:						rgba($purple-2, .1)
+$purple-2-20-percent:						rgba($purple-2, .2)
+$purple-2-30-percent:						rgba($purple-2, .3)
+$purple-2-40-percent:						rgba($purple-2, .4)
+$purple-2-50-percent:						rgba($purple-2, .5)
+$purple-2-60-percent:						rgba($purple-2, .6)
+$purple-2-70-percent:						rgba($purple-2, .7)
+$purple-2-80-percent:						rgba($purple-2, .8)
+$purple-2-90-percent:						rgba($purple-2, .9)
+
+$purple-3-10-percent:						rgba($purple-3, .1)
+$purple-3-20-percent:						rgba($purple-3, .2)
+$purple-3-30-percent:						rgba($purple-3, .3)
+$purple-3-40-percent:						rgba($purple-3, .4)
+$purple-3-50-percent:						rgba($purple-3, .5)
+$purple-3-60-percent:						rgba($purple-3, .6)
+$purple-3-70-percent:						rgba($purple-3, .7)
+$purple-3-80-percent:						rgba($purple-3, .8)
+$purple-3-90-percent:						rgba($purple-3, .9)
+
+$purple-4-10-percent:						rgba($purple-4, .1)
+$purple-4-20-percent:						rgba($purple-4, .2)
+$purple-4-30-percent:						rgba($purple-4, .3)
+$purple-4-40-percent:						rgba($purple-4, .4)
+$purple-4-50-percent:						rgba($purple-4, .5)
+$purple-4-60-percent:						rgba($purple-4, .6)
+$purple-4-70-percent:						rgba($purple-4, .7)
+$purple-4-80-percent:						rgba($purple-4, .8)
+$purple-4-90-percent:						rgba($purple-4, .9)
+
+$purple-5-10-percent:						rgba($purple-5, .1)
+$purple-5-20-percent:						rgba($purple-5, .2)
+$purple-5-30-percent:						rgba($purple-5, .3)
+$purple-5-40-percent:						rgba($purple-5, .4)
+$purple-5-50-percent:						rgba($purple-5, .5)
+$purple-5-60-percent:						rgba($purple-5, .6)
+$purple-5-70-percent:						rgba($purple-5, .7)
+$purple-5-80-percent:						rgba($purple-5, .8)
+$purple-5-90-percent:						rgba($purple-5, .9)
+
+$purple-6-10-percent:						rgba($purple-6, .1)
+$purple-6-20-percent:						rgba($purple-6, .2)
+$purple-6-30-percent:						rgba($purple-6, .3)
+$purple-6-40-percent:						rgba($purple-6, .4)
+$purple-6-50-percent:						rgba($purple-6, .5)
+$purple-6-60-percent:						rgba($purple-6, .6)
+$purple-6-70-percent:						rgba($purple-6, .7)
+$purple-6-80-percent:						rgba($purple-6, .8)
+$purple-6-90-percent:						rgba($purple-6, .9)
+
+$purple-7-10-percent:						rgba($purple-7, .1)
+$purple-7-20-percent:						rgba($purple-7, .2)
+$purple-7-30-percent:						rgba($purple-7, .3)
+$purple-7-40-percent:						rgba($purple-7, .4)
+$purple-7-50-percent:						rgba($purple-7, .5)
+$purple-7-60-percent:						rgba($purple-7, .6)
+$purple-7-70-percent:						rgba($purple-7, .7)
+$purple-7-80-percent:						rgba($purple-7, .8)
+$purple-7-90-percent:						rgba($purple-7, .9)
+
+$purple-8-10-percent:						rgba($purple-8, .1)
+$purple-8-20-percent:						rgba($purple-8, .2)
+$purple-8-30-percent:						rgba($purple-8, .3)
+$purple-8-40-percent:						rgba($purple-8, .4)
+$purple-8-50-percent:						rgba($purple-8, .5)
+$purple-8-60-percent:						rgba($purple-8, .6)
+$purple-8-70-percent:						rgba($purple-8, .7)
+$purple-8-80-percent:						rgba($purple-8, .8)
+$purple-8-90-percent:						rgba($purple-8, .9)
+
+$purple-9-10-percent:						rgba($purple-9, .1)
+$purple-9-20-percent:						rgba($purple-9, .2)
+$purple-9-30-percent:						rgba($purple-9, .3)
+$purple-9-40-percent:						rgba($purple-9, .4)
+$purple-9-50-percent:						rgba($purple-9, .5)
+$purple-9-60-percent:						rgba($purple-9, .6)
+$purple-9-70-percent:						rgba($purple-9, .7)
+$purple-9-80-percent:						rgba($purple-9, .8)
+$purple-9-90-percent:						rgba($purple-9, .9)
+
+$purple-10-10-percent:						rgba($purple-10, .1)
+$purple-10-20-percent:						rgba($purple-10, .2)
+$purple-10-30-percent:						rgba($purple-10, .3)
+$purple-10-40-percent:						rgba($purple-10, .4)
+$purple-10-50-percent:						rgba($purple-10, .5)
+$purple-10-60-percent:						rgba($purple-10, .6)
+$purple-10-70-percent:						rgba($purple-10, .7)
+$purple-10-80-percent:						rgba($purple-10, .8)
+$purple-10-90-percent:						rgba($purple-10, .9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

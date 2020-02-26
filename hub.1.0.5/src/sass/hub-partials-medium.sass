@@ -1,0 +1,815 @@
+
+// ----- IMPORTS
+
+@import '../../sass/hub-vars'
+@import '../../sass/hub-mixins'
+
+// ----- DECLARATIONS
+
+// --- MEDIUM - HEADER,HERO CONTAINER
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	div.hc-header-and-hero-container
+		background-color: $blue-10
+		// background-size: 100% auto, 100% auto, cover
+		// background-position: top left, top left, top center
+		// background-image: linear-gradient(to bottom, $green-1, $green-1-50-percent 20rem, transparent 25rem, $coral-3-40-percent 40rem, $coral-3 85rem), linear-gradient(to right, transparent, $white-10-percent 45%, $white-60-percent 55%, $white-50-percent 90%, $white-20-percent 100%), url('../../img/bkgrd-medium-screen.jpg')
+		background-size: 100% auto, 100% auto, 100% auto, cover
+		background-position: top left, top left, top left, top left
+		background-image: linear-gradient(to bottom, $purple-10-40-percent, $purple-10-10-percent 16rem, transparent 20rem, transparent 40rem, $purple-10 60rem), linear-gradient(to right, transparent, $purple-10-10-percent 40%, $purple-10-30-percent 50%, $purple-10-30-percent 90%, $purple-10-10-percent 100%), linear-gradient(to bottom right, $purple-10-20-percent 50%, $green-5-20-percent 100%), url('../../img/bkgrd-medium-screen.jpg')
+		transition: height .5s
+
+// --- MEDIUM - HEADER
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	// DEFAULT
+
+	div.sticky-outer-wrapper
+
+		header
+			width: 100%
+
+
+			nav#hc-navigation
+				width: 100%
+
+
+	// STUCK
+	
+	div.sticky-outer-wrapper.active
+
+		div.sticky-inner-wrapper
+			z-index: $z-index-sticky-header
+			background-color: $grey-17
+			// background-color: $grey-1
+
+// --- MEDIUM - NAVIGATION
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	// DEFAULT
+
+	div.sticky-outer-wrapper
+
+		nav#hc-navigation
+
+			ul#hc-navigation__items
+				display: flex
+				margin: 0
+				padding: 0
+				justify-content: space-between
+
+				li.hc-navigation__items__item
+					display: block
+					margin-left: 0
+
+					button.hc-navigation__items__item__button
+						+font-weight-semibold
+						min-width: 0
+						height: 7rem
+						border: 0
+						margin: 0
+						padding: 0 3rem
+						text-align: left
+						font-size: 1.3rem
+						background-color: transparent
+						color: $aqua-2
+						// color: $aqua-8
+						
+						div.ms-Button-flexContainer
+							height: 3rem
+
+							i.ms-Button-icon
+								font-size: 1.8rem
+
+							div.ms-Button-textContainer
+								+inline-hidden
+
+					div.brand
+						height: 7rem
+
+						h1
+							font-size: 0
+
+							button.brand__link__header__image
+								height: 7rem
+
+								div.svg-brand--logo-only
+									width: 5.5rem
+									text-align: left
+
+									svg
+										height: 3rem
+
+				li.hc-navigation__items__item:first-child
+
+					button.brand__link__header__image
+						padding-left: 5rem
+
+						div.ms-Button-flexContainer
+
+							i.ms-Button-icon
+								margin: 0
+
+				li.hc-navigation__items__item:last-child
+
+					button.hc-navigation__items__item__button
+						padding-right: 5rem
+
+						div.ms-Button-flexContainer
+
+							i.ms-Button-icon
+								margin: 0
+
+
+	// STUCK
+
+	// div.sticky-outer-wrapper.active
+
+	// 	nav#hc-navigation
+
+	// 		ul#hc-navigation__items
+
+	// 			li.hc-navigation__items__item
+
+	// 				button.hc-navigation__items__item__button
+
+	// 					div.ms-Button-flexContainer
+
+	// 						i.ms-Button-icon
+	// 							color: $aqua-1
+
+// --- MEDIUM - BACKGROUND IMAGE INFO
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	div#staff-lookup-and-background-info
+
+		div#hc-staff-lookup
+			flex-grow: 1
+		
+		div#hc-background-info-container
+			flex-shrink: 0
+			margin-top: 2rem
+
+			button.hc-background-info__button
+				+button
+				+button-colored
+				margin-top: 2rem
+				color: $aqua-1 !important
+				background-color: $aqua-9 !important
+				// color: $aqua-9 !important
+				// background-color: $aqua-1 !important
+
+				&:hover
+					color: $aqua-2 !important
+					background-color: $aqua-10 !important
+					// color: $aqua-10 !important
+					// background-color: $aqua-2 !important
+
+			div#hc-background-info__information
+				+round-corners
+				+small-shadow-bottom-right-light-color
+				padding: 2rem
+				background-image: linear-gradient(to right, $blue-10-60-percent, $blue-10-60-percent), linear-gradient(to right, $white-20-percent, $white-20-percent)
+				// background-color: $white-70-percent
+				color: $white
+				border-top: 5px solid $pink-10
+				border-bottom: 5px solid $pink-10
+				// border-top: 5px solid $pink-2
+				// border-bottom: 5px solid $pink-2
+				transition: border-color .5s, background-color .5s
+
+				h3
+					color: $white
+
+				&:hover
+					+small-shadow-bottom-right-medium-color
+					padding: 2rem
+					border-color: $pink-7
+					// border-color: $pink-3
+					background-image: linear-gradient(to right, $blue-10-60-percent, $blue-10-60-percent), linear-gradient(to right, $white-30-percent, $white-30-percent)
+					// background-color: $white-80-percent
+
+				a#photo-source-link,
+				a#photographer-link
+					color: $aqua-3 !important
+					transition: color .25s
+
+					&:hover
+						color: $aqua-1 !important
+
+
+
+// --- MEDIUM - HERO SECTION
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	div#staff-lookup-and-background-info-and-top-messages
+		+flex-row
+		padding-top: 2rem
+
+		div#staff-lookup-and-background-info
+			+flex-column
+			width: 60%
+			padding: 0 2.5rem 5rem 5rem
+
+			// h2
+			// 	color: $pink-8
+
+// --- MEDIUM - SECTION HEADER SPACING
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	div#hero-container div#staff-lookup-and-background-info,
+	div#hero-container div#hc-messages-top,
+	div#hc-pushed-items,
+	div#hc-get-it-done,
+	div#hc-organization,
+	div#hc-messages-all
+
+		h2
+			margin-top: .1rem
+			margin-bottom: 1rem
+
+	div#hero-container div#staff-lookup-and-background-info,
+	div#hero-container div#hc-messages-top,
+	div#hc-get-it-done,
+	div#hc-messages-all
+
+		h2
+			color: $white
+			// color: $grey-18
+
+// --- MEDIUM - PUSHED ITEMS
+
+@media screen and (min-width: $medium-screen-minimum-width)
+	
+	div#hc-pushed-items
+		padding: 5rem 5rem 4rem 5rem
+
+		div.hc-pushed-items-placeholder
+			column-count: 3
+
+			div.hc-pushed-items-placeholder-column
+				height: 26rem !important
+				background-color: $blue-2
+		
+		// h2
+		// 	color: $grey-13
+
+		ul#hc-pushed-items-list
+			column-count: 3
+			column-gap: 3rem
+			margin: 0
+
+		li.hc-pushed-items-item
+			break-inside: avoid
+			page-break-inside: avoid
+			overflow: hidden
+
+// --- MEDIUM - STAFF LOOKUP
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	div#hc-organization
+		
+		div#hc-staff-lookup
+			flex: 1 0 auto
+
+			ul.persona-cards__list
+				column-count: 2
+				column-gap: 2rem
+
+				li.hc-staff-lookup-persona
+					display: inline-block
+					margin: 0 0 2rem 0
+
+					div.persona-card-dialog-header,
+					ul.persona-card-dialog-body
+						display: inline-block
+		
+// --- MEDIUM - GET IT DONE
+
+@media screen and (min-width: $medium-screen-minimum-width)
+	
+	div#hc-get-it-done
+		position: relative
+		padding: 5rem 4rem 4rem 5rem
+		background-image: linear-gradient(to bottom, $bold-purple, $bold-green)
+		// background-image: linear-gradient(to bottom left, $pink-7, $purple-9)
+		// background-image: linear-gradient(to bottom, $subtle-coral, $purple-3)
+
+		// div.section-notice
+		// 	+round-corners-bottom-only
+		// 	+small-shadow-bottom-right-very-light-color
+		// 	+font-size-6
+		// 	position: absolute
+		// 	top: 0
+		// 	right: 5rem
+		// 	width: calc(25% - 5rem)
+		// 	height: 14rem
+		// 	padding: 3rem 3rem 1rem
+		// 	text-align: center
+		// 	background-color: $coral-2
+
+		// 	p.section-notice__text
+		// 		position: absolute
+		// 		bottom: 2rem
+		// 		left: 3rem
+		// 		width: calc(100% - 6rem)
+		// 		margin: 0 auto
+
+		// 		a
+		// 			color: $interactive-default-darkened-1
+
+		// 			&:hover
+		// 				color: $interactive-active-darkened-1
+			
+		// 	&:hover
+		// 		+small-shadow-bottom-right-light-color
+
+		div.banner
+			margin-top: 2rem
+
+		div.hc-get-it-done-placeholder
+			column-count: 2
+
+			div.hc-get-it-done-placeholder-column
+				height: 300rem !important
+				background-color: $white-20-percent
+
+		div#hc-get-it-done-view-by-group,
+		div#hc-get-it-done-view-by-alpha > ul
+			padding-top: 2rem
+			column-count: 2
+			column-gap: 0
+
+
+		div#hc-get-it-done-view-by-group div.hc-get-it-done-group,
+		div#hc-get-it-done-view-by-alpha > ul > li.hc-get-it-done-item
+			+round-corners
+			+small-shadow-bottom-right-light-color
+			display: inline-block
+			width: calc(100% - 1rem)
+			padding: 3rem
+			background-color: $white-80-percent
+			margin: 0 1rem 1rem 0
+			border-top: 5px solid $white-10-percent
+			border-bottom: 5px solid $white-10-percent
+			transition: border-color .5s, background-color .5s
+
+			&:hover
+				+small-shadow-bottom-right-medium-color
+				border-color: $purple-4
+				// border-color: $coral-4
+				// border-color: $green-3
+				background-color: $white
+
+		a.hc-get-it-done-item-link
+			color: $interactive-default-darkened-1 !important
+			transition: color .25s
+
+			&:hover
+				color: $interactive-active-darkened-1
+
+// --- MEDIUM - MESSAGES
+
+@media screen and (min-width: $medium-screen-minimum-width)
+	
+	// full message in modal
+
+	body.ReactModal__Body--open
+		overflow: hidden
+
+		div.ReactModalPortal
+			z-index: $z-index-modal-full-message
+
+			// overlay
+
+			div.ReactModal__Overlay.ReactModal__Overlay--after-open
+				z-index: $z-index-modal-full-message
+				background-color: $white-80-percent !important
+
+				// message
+				div.ReactModal__Content.ReactModal__Content--after-open.hc-messages-message-full-message-modal
+					+small-shadow-bottom-left-light-color
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 30rem
+					padding: 5rem
+					border: 0
+					overflow: auto
+					WebkitOverflowScrolling: touch
+					outline: none
+					background-color: $white
+
+					div.hc-messages-message
+						padding-bottom: 5rem
+
+					button.hc-messages-message-control
+						+button
+						+button-white
+						+button-outlined-default
+						margin: 0 !important
+						
+						i
+							+font-size-8
+							margin-right: 1rem
+
+					p.hc-messages-message-subject,
+					div.hc-messages-message-image-container,
+					p.hc-messages-message-creator,
+					p.hc-messages-message-created,
+					div.hc-messages-message-body,
+					p.hc-messages-message-tag
+						max-width: 60rem
+
+					div.hc-messages-message-image-container
+
+						img
+							max-width: 100%
+							margin-bottom: 2rem
+
+					p.hc-messages-message-creator,
+					p.hc-messages-message-created,
+					div.hc-messages-message-body,
+					p.hc-messages-message-tag
+						+font-size-5
+
+					p.hc-messages-message-creator
+						+font-weight-regular
+						margin: 0
+						color: $grey-13
+					
+					p.hc-messages-message-created,
+					p.hc-messages-message-tag
+						font-style: italic
+						color: $grey-11
+
+					div.hc-messages-message-body
+						padding-bottom: 2rem
+						color: $grey-16
+
+					p.hc-messages-message-tag
+						margin-bottom: 2rem
+
+	// top messages
+
+	div#staff-lookup-and-background-info-and-top-messages
+			
+		div#hc-messages-top
+			width: 40%
+			padding: 0 4rem 4rem 0
+
+			div.hc-messages-placeholder
+
+				div.hc-messages-placeholder-column
+					height: 22rem !important
+					background-color: $white-20-percent
+
+
+				div.hc-messages-placeholder-column:nth-child(3),
+				div.hc-messages-placeholder-column:nth-child(4)
+					display: none
+
+			ul#hc-messages-list
+				padding: 0
+				margin: 0
+				color: $white
+
+				li.mos-react-component-root
+					+small-shadow-bottom-right-light-color
+					display: inline-block
+					list-style: none
+					width: calc(100% - 1rem)
+					margin: 0 1rem 1rem 0
+
+					&:hover
+						+small-shadow-bottom-right-medium-color
+
+				div.hc-messages-message-preview
+					+round-corners
+					padding: 2rem
+					background-color: $white-5-percent
+					// background-color: $white-60-percent
+					border-top: 5px solid $pink-10
+					border-bottom: 5px solid $pink-10
+					// border-top: 5px solid $pink-2
+					// border-bottom: 5px solid $pink-2
+					transition: border-color .5s, background-color .5s, height .5s
+
+					h3.hc-messages-message-preview-subject
+						color: $white
+
+					button.hc-messages-message-preview-full-message-button,
+					button.hc-messages-message-preview-enable-message-update-button
+						+button
+						+font-weight-regular
+						display: block
+						padding: 0
+						margin: 1rem 0 0 0 !important
+						border: .1rem solid transparent
+						border: 0
+						background-color: transparent
+						color: $aqua-3
+						// color: $interactive-default
+						transition: color .25s, background-color .25s, border-color .25s, padding .25s
+
+						&:after
+							+font-size-7
+
+					&:hover
+						padding: 2rem
+						border-color: $pink-7
+						background-color: $white-10-percent
+						// border-color: $pink-3
+						// background-color: $white-80-percent
+
+						button.hc-messages-message-preview-full-message-button,
+						button.hc-messages-message-preview-enable-message-update-button
+							+button-icon-after
+							padding: 0 2rem
+
+						button.hc-messages-message-preview-full-message-button
+							+icon-fullscreen-after
+							color: $white
+							background-color: $interactive-default
+							// color: $aqua-9 !important
+							// background-color: $aqua-1 !important
+
+							&:hover
+								background-color: $interactive-active
+								// color: $aqua-10 !important
+								// background-color: $aqua-2 !important
+
+						button.hc-messages-message-preview-enable-message-update-button
+							+icon-edit-after
+							+button-outlined-medium
+							color: $aqua-4
+							background-color: transparent
+
+							&:hover
+								color: $aqua-5
+								background-color: transparent
+
+				li.mos-react-component-root:nth-child(3),
+				li.mos-react-component-root:nth-child(4)
+					display: none
+
+	// all messages
+	
+	div#hc-messages-all
+		position: relative
+		padding: 5rem 4rem 5rem 5rem
+		background-image: linear-gradient(to bottom, $bold-green, $blue-10)
+		// background-image: linear-gradient(to bottom, $purple-3, $green-2)
+
+		h2
+			color: $white
+
+		// div.section-notice
+		// 	+round-corners-bottom-only
+		// 	+small-shadow-bottom-right-very-very-light-color
+		// 	+font-size-6
+		// 	position: absolute
+		// 	top: 0
+		// 	right: 5rem
+		// 	width: calc(25% - 3rem)
+		// 	height: 14rem
+		// 	padding: 3rem 3rem 1rem
+		// 	text-align: center
+		// 	background-color: $purple-2
+
+		// 	p.section-notice__text
+		// 		position: absolute
+		// 		bottom: 2rem
+		// 		left: 3rem
+		// 		width: calc(100% - 6rem)
+		// 		margin: 0 auto
+
+		// 		a
+		// 			color: $interactive-default-darkened-1
+
+		// 			&:hover
+		// 				color: $interactive-active-darkened-1
+			
+		// 	&:hover
+		// 		+small-shadow-bottom-right-very-light-color
+
+		// div.banner
+		// 	margin-top: 2rem
+
+		div.hc-messages-placeholder
+			column-count: 2
+
+			div.hc-messages-placeholder-column
+				height: 82rem !important
+				background-color: $white-20-percent
+
+		ul#hc-messages-list
+			padding-top: 2rem
+			column-count: 2
+			column-gap: 0
+
+			li.mos-react-component-root
+				+small-shadow-bottom-right-light-color
+				display: inline-block
+				list-style: none
+				width: calc(100% - 1rem)
+				margin: 0 1rem 1rem 0
+
+				&:hover
+					+small-shadow-bottom-right-medium-color
+
+			div.hc-messages-message-preview
+				+round-corners
+				padding: 2rem
+				background-color: $white-80-percent
+				border-top: 5px solid $white-10-percent
+				border-bottom: 5px solid $white-10-percent
+				transition: border-color .5s, background-color .5s, height .5s
+
+				// div.hc-messages-message-preview-or-inline-truncated-body
+				// 	+font-weight-semilight
+
+				button.hc-messages-message-preview-full-message-button,
+				button.hc-messages-message-preview-enable-message-update-button
+					+button
+					+font-weight-regular
+					display: block
+					padding: 0
+					margin: 1rem 0 0 0 !important
+					border: .1rem solid transparent
+					background-color: transparent
+					color: $interactive-default
+					transition: color .25s, background-color .25s, border-color .25s, padding .25s
+
+					&::after
+						+font-size-7
+					
+				&:hover
+					border-color: $primary-green
+					// border-color: $yellow-2
+					background-color: $white
+
+					button.hc-messages-message-preview-full-message-button,
+					button.hc-messages-message-preview-enable-message-update-button
+						+button-icon-after
+						padding: 0 2rem
+
+					button.hc-messages-message-preview-full-message-button
+						+icon-fullscreen-after
+						color: $white
+						background-color: $interactive-default
+
+						&:hover
+							background-color: $interactive-active
+							
+
+					button.hc-messages-message-preview-enable-message-update-button
+						+icon-edit-after
+						+button-outlined-default
+						color: $interactive-default
+						background-color: transparent
+
+						&:hover
+							color: $interactive-active
+							background-color: transparent
+
+			li.hc-messages-message-preview-or-inline:first-of-type:last-of-type
+				display: inline-block
+
+	// new message form
+
+	div#hc-messages-new-message-form
+		+round-corners
+		max-width: 80rem
+		padding: 2rem
+		margin: 2rem 0 1rem 0
+		background-color: $purple-10
+
+		h3,
+		div.requirement-legend,
+		label.ms-Label,
+		label[for='hc-messages-images-file-input']
+			color: $white
+
+		label,
+		span.requirement-indicator
+
+			&:after
+				color: $primary-yellow !important
+
+		label[for='hc-messages-images-file-input']
+			padding: .5rem 0
+	
+// --- MEDIUM - HC ORG
+
+@media screen and (min-width: $medium-screen-minimum-width)
+	
+	div#hc-organization
+		padding: 5rem
+		
+		// h2,
+		// h3
+		// 	color: $grey-13
+
+		div.hc-organization-placeholder
+			+row
+
+			div.hc-organization-placeholder-rectangle__teams--divs-depts,
+			div.hc-organization-placeholder-rectangle__teams--other-teams
+				+column
+			
+			div.hc-organization-placeholder-rectangle__teams--divs-depts
+				width: 77rem
+				padding-right: 5rem
+
+				div.hc-organization-placeholder-rectangle__filler
+					width: 72rem
+					height: 68rem !important
+					background-color: $blue-2
+
+			div.hc-organization-placeholder-rectangle__teams--other-teams
+				width: 31rem
+
+				div.hc-organization-placeholder-rectangle__filler
+					width: 31rem
+					height: 20rem !important
+					background-color: $blue-2
+
+		// TEAMS
+		
+		div#hc-organization__teams
+			+row
+
+			div#hc-organization__teams--divs-depts
+				+column
+				width: 70%
+				padding-right: 5rem
+
+			div#hc-organization__teams--other-teams
+				+column
+				width: 30%
+
+// --- MEDIUM - FOOTER
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	footer
+		+font-size-5
+		padding: 2rem 5rem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

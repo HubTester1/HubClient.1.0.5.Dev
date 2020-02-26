@@ -1,0 +1,306 @@
+
+// ----- IMPORTS
+
+@import '../../sass/hub-vars'
+@import '../../sass/hub-mixins'
+
+// ----- DECLARATIONS
+
+// --- ALL - SP CHROME
+
+body.contains-hub-central
+
+	div#s4-ribbonrow,
+	div#s4-workspace
+		display: none !important
+
+// --- ALL - HC CONTAINER
+
+div.hc-container
+	box-sizing: border-box
+
+// --- ALL - HEADER,HERO CONTAINER
+
+div.hc-header-and-hero-container
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+
+// --- ALL - HEADER
+
+div#hc-container
+	
+	header
+
+		h1.brand__link__header
+			margin: 0
+
+		span.brand__link__header__text
+			+inline-hidden
+
+		button.brand__link__header__image
+			margin: 0
+			padding: 0
+			background-color: transparent
+			border: 0
+			cursor: pointer
+
+			svg
+				
+				g.letterforms
+					fill: $white
+					// fill: $aqua-8
+
+// --- ALL - HERO
+
+div#hero-container
+
+	div#hc-staff-lookup
+		
+		// h2
+		// 	color: $white
+
+		div.ms-BasePicker.ms-PeoplePicker
+			background-color: $white-60-percent
+			transition: background-color .25s
+			
+			&:hover
+				+small-shadow-bottom-right-very-light-color
+				background-color: $white-80-percent
+		
+			input.ms-BasePicker-input
+				background-color: transparent	
+
+		h3.persona-cards__header
+			+block-hidden
+
+// --- ALL - STAFF LOOKUP
+
+div#hc-staff-lookup
+
+	h3.persona-cards__header
+		+block-hidden
+
+// --- ALL - PUSHED ITEMS
+
+div#hc-pushed-items
+
+	li.hc-pushed-items-item
+		list-style: none
+		margin: 0 0 1.5rem 0
+
+		a
+			+font-size-6
+			+font-weight-regular
+
+	li.hc-pushed-items-item.file
+		+list-item-icon-bullet
+		+icon-document-before
+		color: $grey-13
+
+		&::before
+			+font-size-8
+
+	li.hc-pushed-items-item.page
+		+list-item-icon-bullet
+		+icon-link-before
+		color: $grey-13
+
+		&::before
+			+font-size-7
+
+// --- ALL - HC GET IT DONE
+
+div#hc-get-it-done
+
+	div#hc-get-it-done-view-by-group
+
+		div.hc-get-it-done-group
+			margin-bottom: 3rem
+
+			button.collapsible-section-button
+				+button-light
+		
+		li.hc-get-it-done-item
+			list-style: none
+
+		div.hc-get-it-done-item,
+		li.hc-get-it-done-item
+			margin: 1rem 0 2rem 0
+
+	div#hc-get-it-done-view-by-alpha
+		
+		li.hc-get-it-done-item
+			list-style: none
+
+	p.hc-get-it-done-item-link-container
+		+font-weight-regular
+		margin-bottom: 0
+
+	p.hc-get-it-done-item-description-container
+		+font-size-6
+
+// --- ALL - HC ORG
+
+div#hc-container
+
+	div#hc-organization-body
+
+		// COMMAND BAR
+
+		div#hc-organization-command-bar
+			margin-bottom: 2rem
+
+		// DIVS, DEPTS, TEAMS
+
+		a.org-chart-link
+			+button
+			+button-anchor
+			+button-white
+			+button-icon-before
+			+icon-org-chart-before
+
+		a.hub-team-link
+			+button
+			+button-anchor
+			+button-white
+			+button-icon-before
+			+icon-link-before
+
+		// STAFF LOOKUP
+
+		div#hc-staff-lookup
+
+			div#hc-staff-lookup__picker-and-personas
+
+				div#picker
+					+round-corners
+					padding: 2rem
+					background-color: $grey-1
+					// background-color: $primary-yellow
+
+// --- ALL - MESSAGES
+
+div#hc-container
+
+	// message preview
+	ul#hc-messages-list
+
+		li.mos-react-component-root
+
+			div.hc-messages-message-preview
+				display: grid
+				grid-template-areas: "Subject Subject" "Author Date" "Body Body" "Button Button"
+				grid-template-rows: auto auto auto auto
+				grid-template-columns: calc(100% - 10.5rem) 10rem
+				grid-column-gap: .5rem
+
+				h3.hc-messages-message-preview-subject
+					grid-area: Subject
+					margin: 0
+					height: 3.3rem
+					text-overflow: ellipsis
+					overflow: hidden
+					white-space: nowrap
+
+				p.hc-messages-message-preview-author
+					grid-area: Author
+					margin: 0
+					height: 2.4rem
+					text-overflow: ellipsis
+					overflow: hidden
+					white-space: nowrap
+
+					span.hc-messages-message-author-prefix
+						+inline-hidden
+				
+				p.hc-messages-message-preview-date
+					+font-size-6
+					grid-area: Date
+					padding-top: .3rem
+					text-align: right
+					margin: 0
+					// color: $grey-13
+
+					span.hc-messages-message-date-prefix
+						+inline-hidden
+
+				p.hc-messages-message-preview-body
+					+font-size-6
+					grid-area: Body
+					height: 2.4rem
+					text-overflow: ellipsis
+					overflow: hidden
+					white-space: nowrap
+				
+				div.hc-messages-message-preview-button-container
+					grid-area: Button
+
+	// new message form
+	div#hc-messages-new-message-form
+		margin-top: 1rem !important
+
+		button#new-message-save-button
+			+button
+			+button-colored
+			+button-icon-before
+			+icon-save-before
+			margin-top: 1rem !important
+			width: 11rem
+
+		button#new-message-close-button
+			+button
+			+button-white
+			+button-icon-before
+			+icon-close-before
+			margin-top: 1rem !important
+			width: 11rem
+
+	// the 'no messages' message
+	div#hc-messages-no-messages-message
+		margin-top: 2rem !important
+
+// --- ALL - FOOTER
+
+footer
+	color: $grey-10
+	background-color: $grey-17
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

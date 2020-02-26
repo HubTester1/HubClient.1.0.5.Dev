@@ -1,0 +1,162 @@
+
+// ----- IMPORTS
+
+@import './hub-vars'
+@import './hub-mixins'
+
+// ----- DECLARATIONS
+
+// --- MEDIUM - PERSONA CARD
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	div#hc-container,
+	div#s4-workspace
+
+		div.hc-organization-teams-member-persona,
+		li.hc-staff-lookup-persona
+			+row
+
+			div.persona-card-dialog-header
+				+column
+				width: 60%
+
+
+			ul.persona-card-dialog-body
+				+column
+				font-size: 1.4rem
+				padding: 0
+				vertical-align: middle
+				width: 40%
+
+				li:first-child
+					margin-top: 1rem
+
+
+// --- MEDIUM - COMMAND BAR
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	div#hc-container
+
+		div.command-bar
+
+			div.command-bar__items-container
+
+				ul.command-bar__items-list
+					display: flex
+
+					li.command-bar__items-list__list-item:first-child
+
+						div.command-bar__item
+
+							button.command-bar__button,
+							div.ms-SearchBox
+								+round-corners-left-only
+
+								&:hover
+									+small-shadow-bottom-right-light-color
+
+					li.command-bar__items-list__list-item:last-child
+
+						div.command-bar__item
+
+							button.command-bar__button,
+							div.ms-SearchBox
+								+round-corners-right-only
+
+								&:hover
+									+small-shadow-bottom-left-light-color
+
+
+// --- MEDIUM - MAINTENANCE MODE
+
+@media screen and (min-width: $medium-screen-minimum-width)
+
+	body.is-in-maintenance-mode,
+	body.neso-is-unavailable
+
+		div#hub-central-mount-point
+			display: none
+
+		div.overlay-screen
+
+			&::before
+				display: inline-block !important
+				vertical-align: middle
+				content: ''
+				height: 100%
+				margin-right: -.25rem
+
+		div#overlays-screen-container
+			
+			div.overlay-screen#maintenance-mode,
+			div.overlay-screen#neso-is-unavailable
+				background-position: right top
+				background-repeat: no-repeat
+				background-attachment: fixed
+				background-size: cover
+				text-align: left
+
+				div.screen-content
+					min-width: 20rem
+					max-width: 40rem
+					padding: 5rem
+					background-color: $pink-10-90-percent
+
+					a
+						display: block
+						width: 30rem
+						margin-bottom: 2rem
+
+					p.small-screen
+						display: none
+
+			div.overlay-screen#maintenance-mode
+				background-image: url('/sites/hubprod/Asset%20Library/sweet-kitty-action_1920.jpg')
+
+				&::before
+					margin-left: 20%
+
+			div.overlay-screen#neso-is-unavailable
+				background-image: url('/sites/hubprod/Asset%20Library/chow_1920.jpg')
+
+				&::before
+					margin-left: 40%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
