@@ -44,6 +44,9 @@ export default class HcMessagesFilePreview extends React.Component {
 						{/* <div className="hc-messages-images-image-file-size">{fileSizeFormatted}</div> */}
 					</div>
 					{/* delete control */}
+					{/**
+					 * @todo Clicking button should initiate confirmation message. Upon confirmation, remove from S3 AND Mongo, so that non-saving doesn't result in a missing file.
+					 */}
 					<button
 						id={`hc-messages-images-image-file-control_${this.props.imageId}`} 
 						className="hc-messages-images-image-file-control file-upload-preview__file-control"

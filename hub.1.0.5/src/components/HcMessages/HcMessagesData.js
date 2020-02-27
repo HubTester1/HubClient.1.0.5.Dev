@@ -303,8 +303,10 @@ export default class HcMessagesData {
 			APIClient.SendAPIDeleteRequest(
 				`${APIEndPoints.dev.hubMessages.base}${APIEndPoints.dev.hubMessages.images}`,
 				{
-					messageID,
-					fileName,
+					data: {
+						messageID,
+						fileName,
+					},
 				},
 			)
 				.then((response) => {
