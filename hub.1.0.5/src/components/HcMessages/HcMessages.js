@@ -258,14 +258,14 @@ export default class HcMessages extends React.Component {
 							const uploadsFailed = [];
 							let newMessageImageSomeOrAllUploadsFailedWarningValue = false;
 							fileUploadResults.forEach((fileUploadResult) => {
-								uploadsSucceeded.push({
-									/**
-									 * @todo sub %20 for spaces from file name =====================================================
-									 */
-									name: fileUploadResult.substring(fileUploadResult.lastIndexOf('/') + 1),
-									url: `https://mos-api-misc-storage.s3.amazonaws.com${fileUploadResult}`,
-									key: uuidv4(),
-								});
+								// uploadsSucceeded.push({
+								// 	/**
+								// 	 * @todo sub %20 for spaces from file name =====================================================
+								// 	 */
+								// 	name: fileUploadResult.substring(fileUploadResult.lastIndexOf('/') + 1),
+								// 	url: `https://mos-api-misc-storage.s3.amazonaws.com${fileUploadResult}`,
+								// 	key: uuidv4(),
+								// });
 							});
 							if (uploadsFailed[0]) {
 								newMessageImageSomeOrAllUploadsFailedWarningValue = true;
