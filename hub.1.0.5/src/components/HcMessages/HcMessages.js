@@ -250,24 +250,15 @@ export default class HcMessages extends React.Component {
 				.then((messageID) => {
 					// get a promise to upload the files
 					HcMessagesData.UploadMessagesFiles(messageID, acceptedFiles)
-					// if the promise was *resolved* with some results
-					// note: here, results could contain errors; results are for
-					// 		one upload attempt per file
+						// if the promise was *resolved* with some results
+						// note: here, results could contain errors; results are for
+						// 		one upload attempt per file
 						.then((fileUploadResults) => {
-							const uploadsSucceeded = [];
-							const uploadsFailed = [];
+							// set up flag indicating that there were no upload errors
 							let newMessageImageSomeOrAllUploadsFailedWarningValue = false;
-							fileUploadResults.forEach((fileUploadResult) => {
-								// uploadsSucceeded.push({
-								// 	/**
-								// 	 * @todo sub %20 for spaces from file name =====================================================
-								// 	 */
-								// 	name: fileUploadResult.substring(fileUploadResult.lastIndexOf('/') + 1),
-								// 	url: `https://mos-api-misc-storage.s3.amazonaws.com${fileUploadResult}`,
-								// 	key: uuidv4(),
-								// });
-							});
-							if (uploadsFailed[0]) {
+							// if there are any elements in the failures array
+							if (fileUploadResults.uploadsFailed[0]) {
+								// alter the flag accordingly
 								newMessageImageSomeOrAllUploadsFailedWarningValue = true;
 							}
 							// set state to reflect results of all image uploads to this point
@@ -275,9 +266,7 @@ export default class HcMessages extends React.Component {
 							this.setState((prevState) => {
 								const previousFileArray = prevState.newMessageImages;
 								const currentFileArray
-											= [...uploadsSucceeded, ...previousFileArray];
-								// console.log('the files after dropping and before saving');
-								// console.log(currentFileArray);
+									= [...fileUploadResults.uploadsSucceeded, ...previousFileArray];
 								return {
 									newMessageImagesAreUploading: false,
 									newMessageImages: currentFileArray,
@@ -286,21 +275,16 @@ export default class HcMessages extends React.Component {
 								};
 							});
 						})
-					// if the promise to upload the files was rejected with an error
-					// note: could be because a folder couldn't be created, or some other reason
+						// if the promise to upload the files was rejected with an error
+						// 		note: could be because a folder couldn't be created, 
+						// 		or some other reason
 						.catch((error) => {
-							// console.log('error');
-							// console.log(error);
 							// set state to indicate that images are no longer processing and image upload error
 							this.setState({
 								newMessageImagesAreUploading: false,
 								newMessageImageUploadsImpossible: true,
 							});
 						});
-					/* })
-						.catch((fileFormattingError) => {
-							console.log(fileFormattingError);
-						}); */
 				})
 				// if the promise was rejected with an error
 				// note: messageIDError already set
@@ -322,13 +306,9 @@ export default class HcMessages extends React.Component {
 	handleFileDeletion(imageContent, e) {
 		// prevent navigating to image (because the control is inside a link)
 		e.preventDefault();
-		// set state to reflect all image uploads to this point minus the one whose button was clicked
+		// send params to deletion function
 		HcMessagesData.DeleteMessagesFile(this.state.newMessageID, imageContent.name);
-		/* .then((allMessageTags) => {
-				this.setState(() => ({
-					tagsArray: allMessageTags,
-				}));
-			}); */
+		// set state to reflect all image uploads to this point minus the one whose button was clicked
 		this.setState((prevState) => {
 			const previousFileArray = prevState.newMessageImages;
 			const currentFileArray = [];
@@ -620,32 +600,9 @@ export default class HcMessages extends React.Component {
 			return false;
 		};
 	}
-	returnSortedMessages(messages) {
-
-		/* // sort messages according to modified property
-		allMessagesMessages.sort((a, b) => {
-			if (moment(a.modified).isBefore(moment(b.modified))) {
-				return 1;
-			}
-			return -1;
-		}); */
-	}
 	returnHcMessagesAllBody() {
 		return (
 			<div id="hc-messages-all-body">
-				{/* <div className="section-notice section-notice__neutral">
-					<p className="section-notice__text">
-						Learn about&nbsp;
-						<a
-							target="_blank"
-							rel="noopener noreferrer"
-							href="https://bmos.sharepoint.com/SitePages/Messages%20Update,%20April%202019.aspx"
-						>
-							April 2019 updates to Messages
-						</a>
-						.
-					</p>
-				</div> */}
 				<HcMessagesCommandBar
 					screenType={this.props.screenType}
 					tagsArray={this.state.tagsArray}
@@ -887,8 +844,7 @@ export default class HcMessages extends React.Component {
 			);
 		}
 		if (this.props.allOrTop === 'all' && this.props.screenType === 'small') {
-			return this.returnHcMessagesAllBody();
-			/* return (
+			return (
 				<AccordionItem
 					id="hc-messages-all"
 					className="hc-messages-all mos-react-component-root accordion__item"
@@ -909,7 +865,7 @@ export default class HcMessages extends React.Component {
 						{this.returnHcMessagesAllBody()}
 					</AccordionItemBody>
 				</AccordionItem>
-			); */
+			);
 		}
 		return (
 			<div id="hc-messages-top" className="mos-react-component-root">

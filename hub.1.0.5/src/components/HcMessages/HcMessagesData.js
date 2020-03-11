@@ -3,6 +3,7 @@
 
 import moment from 'moment';
 import { Web } from 'sp-pnp-js';
+import { v4 as uuidv4 } from 'uuid';
 import APIClient from '../../services/APIClient';
 import APIEndPoints from '../../services/APIEndpoints.json';
 
@@ -14,30 +15,98 @@ export default class HcMessagesData {
 	constructor() {
 		this.UploadMessagesFiles = this.UploadMessagesFiles.bind(this);
 	}
+	static UploadOneMessagesFile(filesWeb, folderName, fileName, file) {
+		// return a new promise
+		return new Promise((resolve, reject) => {
+			console.log('filesWeb');
+			console.log(filesWeb);
+			filesWeb.getFolderByServerRelativeUrl(`/MOSAPIMiscStorage/HubMessageAssets/${folderName}/`).files.add(fileName, file, true)
+				// if the promise is resolved with a result
+				.then((fileResult) => {
+					console.log('fileResult.data.Name');
+					console.log(fileResult.data.Name);
+					// then resolve this promise with the file 
+					// 		name, in case it's different from 
+					// 		what we requested
+					resolve({
+						error: false,
+						fileName: fileResult.data.Name,
+					});
+				})
+				// if the promise is rejected with an error
+				.catch((fileError) => {
+					console.log('fileError');
+					console.log(fileError);
+					// reject this promise with the error
+					reject(fileError);
+				});
+		});
+	}
 	static UploadMessagesFiles(messageID, filesArray) {
 		// return a new promise
 		return new Promise((resolve, reject) => {
-			const file = filesArray[0];
-			const filesWeb = new Web('https://bmos.sharepoint.com');
-			filesWeb.getFolderByServerRelativeUrl('/MOSAPIMiscStorage/HubMessageAssets').files.add('custom-name.jpg', file, true)
-			
-			/* .lists.getByTitle('MOSAPIMiscStorage').items
-				.select('File/ServerRelativeUrl', 'FileLeafRef', 'ServerRedirectedEmbedUrl', 'Title')
-				.expand('File')
-				.get() */
+			// get promise to create a folder named with message id
+			APIClient.SendAPIData(
+				`${APIEndPoints.dev.files.base}${APIEndPoints.dev.files.folder}`,
+				{
+					siteToken: 'root',
+					driveToken: 'MOSAPIMiscStorage',
+					parentToken: 'HubMessageAssets',
+					newFolderName: messageID,
+				},
+			)
 				// if the promise is resolved with a result
-				.then((result) => {
-					console.log('result');
-					console.log(result);
-					// then resolve this promise with the result
-					resolve(result);
+				.then((folderResult) => {
+					console.log('folderResult');
+					console.log(folderResult);
+					const folderName = folderResult.createdName;
+					const uploadPromises = [];
+					const uploadsSucceeded = [];
+					const uploadsFailed = [];
+					// for each file in the passed array
+					filesArray.forEach((file) => {
+						// construct a file name
+						const fileName = file.name.replace(/ /g, '-');
+						// get the SP "web" for the storage location
+						const filesWeb = new Web('https://bmos.sharepoint.com');
+						// push to promises array a promise to store the file
+						uploadPromises.push(this.UploadOneMessagesFile(filesWeb, folderName, fileName, file));
+					});
+					// when all upload promises have been fulfilled
+					Promise.all(uploadPromises)
+						// if the promise is resolved with a result
+						.then((uploadResults) => {
+							console.log('uploadResults');
+							console.log(uploadResults);
+							// for each result
+							uploadResults.forEach((uploadResult) => {
+								// if there was no upload error
+								if (!uploadResult.error) {
+									// push an object to uploads succeeded
+									uploadsSucceeded.push({
+										name: uploadResult.fileName,
+										url: `https://bmos.sharepoint.com/_api/v2.0/sharePoint:/MOSAPIMiscStorage/HubMessageAssets/1250/${uploadResult.fileName}:/driveItem/thumbnails/0/c600x999999/content`,
+										key: uuidv4(),
+									});
+								// if there was an upload error
+								} else {
+									// push an object to uploads succeeded
+									uploadsFailed.push(uploadResult);
+								}
+							});
+							// resolve this promise with the uploads results
+							resolve({
+								uploadsSucceeded,
+								uploadsFailed,
+							});
+						});
 				})
 				// if the promise is rejected with an error
-				.catch((error) => {
-					console.log('error');
-					console.log(error);
+				.catch((folderError) => {
+					console.log('folderError');
+					console.log(folderError);
 					// reject this promise with the error
-					reject(error);
+					reject(folderError);
 				});
 		});
 	}
