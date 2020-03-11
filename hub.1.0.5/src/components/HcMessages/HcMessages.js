@@ -303,6 +303,10 @@ export default class HcMessages extends React.Component {
 			}));
 		}
 	}
+	/**
+	 * @todo - Image deletion is immediate, even if user doesn't save modified message.
+	 * Thus, this function should first activate confirmation modal and THEN delete.
+	 */
 	handleFileDeletion(imageContent, e) {
 		// prevent navigating to image (because the control is inside a link)
 		e.preventDefault();
