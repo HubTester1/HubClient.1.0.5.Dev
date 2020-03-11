@@ -4,22 +4,43 @@
 			"base": 			"https://xmmymt42ql.execute-api.us-east-1.amazonaws.com/dev/",
 			"awsCredentials": 	"access/aws-credentials"
 		},
+		"email": {
+			"base": 			"https://kn9p96t26h.execute-api.us-east-1.amazonaws.com/dev/",
+			"send": 			"email/send"
+		},
+		"files": {
+			"base": 			"https://ldv1zap4x5.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings":			"files/settings",
+			"drive":			"files/drive",
+			"driveChildren":	"files/drive/children",
+			"driveChild":		"files/drive/child",
+			"folder":			"files/folder",
+			"file":				"files/file"
+		},
 		"health": {
 			"base": 			"https://5nkpku1rge.execute-api.us-east-1.amazonaws.com/dev/",
 			"check": 			"health/check"
 		},
-		"email": {
-			"base": 			"https://kzloq7b974.execute-api.us-east-1.amazonaws.com/dev/",
-			"send": 			"email/send"
+		"hubLists": {
+			"base": 			"https://yda56tdm0i.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings":			"hubLists/settings",
+			"list":				"hubLists/list",
+			"items":			"hubLists/items"
 		},
 		"hubMessages": {
-			"base":				"https://qbybpbixkl.execute-api.us-east-1.amazonaws.com/dev/",
+			"base":				"https://gprxlfdjxj.execute-api.us-east-1.amazonaws.com/dev/",
 			"settings": 		"hubMessages/settings",
 			"messages": 		"hubMessages/messages",
 			"add":	 			"hubMessages/add",
 			"update":	 		"hubMessages/update",
-			"nextID":	 		"hubMessages/nextid",
-			"images":	 		"hubMessages/images"
+			"nextID":	 		"hubMessages/nextid"
+		},
+		"hubSites": {
+			"base": 			"https://kqybggd4qj.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings":			"hubSites/settings",
+			"site":				"hubSites/site",
+			"drives":			"hubSites/drives",
+			"lists":			"hubSites/lists"
 		}
 	}
 }
