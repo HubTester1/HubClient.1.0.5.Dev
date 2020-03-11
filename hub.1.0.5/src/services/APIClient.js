@@ -55,7 +55,7 @@ export default class HttpClient {
 					if (result.status === 200) {
 						// resolve this promise with the payload
 						resolve(result.data.payload);
-						// if the response status is NOT 200
+					// if the response status is NOT 200
 					} else {
 						// reject this promise with whatever result
 						//		was returned
