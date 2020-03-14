@@ -1,46 +1,62 @@
 {
 	"dev": {
 		"access": {
-			"base": 			"https://xmmymt42ql.execute-api.us-east-1.amazonaws.com/dev/",
-			"awsCredentials": 	"access/aws-credentials"
+			"base": 						"https://xmmymt42ql.execute-api.us-east-1.amazonaws.com/dev/",
+			"awsCredentials": 				"access/aws-credentials"
 		},
 		"email": {
-			"base": 			"https://kn9p96t26h.execute-api.us-east-1.amazonaws.com/dev/",
-			"send": 			"email/send"
+			"base": 						"https://kn9p96t26h.execute-api.us-east-1.amazonaws.com/dev/",
+			"send": 						"email/send"
 		},
 		"files": {
-			"base": 			"https://ldv1zap4x5.execute-api.us-east-1.amazonaws.com/dev/",
-			"settings":			"files/settings",
-			"drive":			"files/drive",
-			"driveChildren":	"files/drive/children",
-			"driveChild":		"files/drive/child",
-			"folder":			"files/folder",
-			"file":				"files/file"
+			"base": 						"https://ldv1zap4x5.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings":						"files/settings",
+			"drive":						"files/drive",
+			"driveChildren":				"files/drive/children",
+			"driveChild":					"files/drive/child",
+			"folder":						"files/folder",
+			"file":							"files/file"
 		},
 		"health": {
-			"base": 			"https://5nkpku1rge.execute-api.us-east-1.amazonaws.com/dev/",
-			"check": 			"health/check"
+			"base": 						"https://5nkpku1rge.execute-api.us-east-1.amazonaws.com/dev/",
+			"check": 						"health/check"
 		},
 		"hubLists": {
-			"base": 			"https://yda56tdm0i.execute-api.us-east-1.amazonaws.com/dev/",
-			"settings":			"hubLists/settings",
-			"list":				"hubLists/list",
-			"items":			"hubLists/items"
+			"base": 						"https://yda56tdm0i.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings":						"hubLists/settings",
+			"list":							"hubLists/list",
+			"items":						"hubLists/items"
 		},
 		"hubMessages": {
-			"base":				"https://gprxlfdjxj.execute-api.us-east-1.amazonaws.com/dev/",
-			"settings": 		"hubMessages/settings",
-			"messages": 		"hubMessages/messages",
-			"add":	 			"hubMessages/add",
-			"update":	 		"hubMessages/update",
-			"nextID":	 		"hubMessages/nextid"
+			"base":							"https://gprxlfdjxj.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings": 					"hubMessages/settings",
+			"messages": 					"hubMessages/messages",
+			"add":	 						"hubMessages/add",
+			"update":	 					"hubMessages/update",
+			"nextID":	 					"hubMessages/nextid"
 		},
 		"hubSites": {
-			"base": 			"https://kqybggd4qj.execute-api.us-east-1.amazonaws.com/dev/",
-			"settings":			"hubSites/settings",
-			"site":				"hubSites/site",
-			"drives":			"hubSites/drives",
-			"lists":			"hubSites/lists"
+			"base": 						"https://kqybggd4qj.execute-api.us-east-1.amazonaws.com/dev/",
+			"settings":						"hubSites/settings",
+			"site":							"hubSites/site",
+			"drives":						"hubSites/drives",
+			"lists":						"hubSites/lists"
+		},
+		"people": {
+			"base": 						"XXXXXXXXXXXXXXXXXX",
+			"all":							"people/all",
+			"person":						"people/person",
+			"org":							"people/org",
+			"department":					"people/department",
+			"division":						"people/division",
+			"departments":					"people/departments",
+			"managers":						"people/managers",
+			"managersDownlinesFlat":		"people/managers/downlines/flat",
+			"managersDownlinesHierarchical":"people/managers/downlines/hierarchical",
+			"managerDownlineDirect":		"people/manager/downline/direct",
+			"managerDownlineFlat":			"people/manager/downline/flat",
+			"managerDownlineHierarchical":	"people/manager/downline/hierarchical",
+			"personUpline":					"people/person/upline/flat"
 		}
 	}
 }
