@@ -46,7 +46,7 @@
 		"moment": "^2.22.1",
 		"next": "^9.1.2",
 		"office-ui-fabric-react": "^5.135.0",
-		"pug": "^2.0.4",
+		"pug": "^3.0.1",
 		"react": "^16.11.0",
 		"react-accessible-accordion": "^2.4.0",
 		"react-dom": "^16.11.0",
