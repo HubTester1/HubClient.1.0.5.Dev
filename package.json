@@ -44,7 +44,7 @@
 		"jsonexport": "^2.4.1",
 		"locutus": "^2.0.10",
 		"moment": "^2.22.1",
-		"next": "^9.1.2",
+		"next": "^11.1.0",
 		"office-ui-fabric-react": "^5.135.0",
 		"pug": "^2.0.4",
 		"react": "^16.11.0",
