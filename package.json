@@ -93,7 +93,7 @@
 		"gulp-plumber": "^1.2.0",
 		"gulp-spsave": "^3.1.0",
 		"html-webpack-plugin": "^3.2.0",
-		"node-sass": "^4.9.3",
+		"node-sass": "^7.0.0",
 		"node-sp-auth": "^2.5.6",
 		"optimize-css-assets-webpack-plugin": "^4.0.1",
 		"postcss-loader": "^2.1.5",
